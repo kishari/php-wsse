@@ -14,8 +14,8 @@
     <!-- type -->
     <wsdl:types>
         <xsd:schema>
-            <xsd:import namespace="http://i3s.inverso.de/mkb/sales/tool/model/motor" schemaLocation="xsd1.xsd" />
-						<xsd:import namespace="http://i3s.inverso.de/mkb/sales/tool/model/type" schemaLocation="xsd2.xsd" />
+            <xsd:import namespace="http://i3s.inverso.de/mkb/sales/tool/model/motor" schemaLocation="model-motor.xsd" />
+						<xsd:import namespace="http://i3s.inverso.de/mkb/sales/tool/model/type" schemaLocation="model-types.xsd" />
         </xsd:schema>
     </wsdl:types>
 

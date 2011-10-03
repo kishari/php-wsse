@@ -12,7 +12,7 @@
 --><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://i3s.inverso.de/mkb/sales/tool/model/motor" xmlns:nst="http://i3s.inverso.de/mkb/sales/tool/model/type" targetNamespace="http://i3s.inverso.de/mkb/sales/tool/model/motor" elementFormDefault="qualified" version="1.0">
 
   <!-- data-model-type -->
-  <import namespace="http://i3s.inverso.de/mkb/sales/tool/model/type" schemaLocation="xsd2.xsd" />
+  <import namespace="http://i3s.inverso.de/mkb/sales/tool/model/type" schemaLocation="types.xsd" />
 
   <!-- - - - SimpleTypeSection - - - - -->
 
