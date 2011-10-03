@@ -1,0 +1,197 @@
+<!--
+    Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.1-hudson-28-.
+-->
+<!--
+    $Id: mkb-sales-tool-model-home.xsd 61246 2011-01-12 08:57:09Z tbi $ $Revision: 61246 $ MKB Sales Tool Webservice - Home WSDL (c) 2010-2011 / inverso Gesellschaft für innovative Versicherungssoftware mbH modositasok az eredetihez kepest: - xsd schemaLocation ertekek broker xsd-k.
+-->
+<wsdl:definitions xmlns:tns="http://i3s.inverso.de/mkb/sales/tool/service/home"
+    xmlns:model="http://i3s.inverso.de/mkb/sales/tool/model/home"
+    xmlns:type="http://i3s.inverso.de/mkb/sales/tool/model/type"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://www.w3.org/ns/ws-policy"
+    xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+    xmlns:fi="http://java.sun.com/xml/ns/wsit/2006/09/policy/fastinfoset/service"
+    xmlns:tcp="http://java.sun.com/xml/ns/wsit/2006/09/policy/soaptcp/service"
+    xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+    xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702"
+    xmlns:sc="http://schemas.sun.com/2006/03/wss/server"
+    xmlns:wspp="http://java.sun.com/xml/ns/wsit/policy" name="mkb-sales-tool-service-home"
+    targetNamespace="http://i3s.inverso.de/mkb/sales/tool/service/home">
+    <!-- type -->
+    <wsdl:types>
+        <xsd:schema>
+            <xsd:import namespace="http://i3s.inverso.de/mkb/sales/tool/model/home"
+                schemaLocation="model-home.xsd"/>
+            <xsd:import namespace="http://i3s.inverso.de/mkb/sales/tool/model/type"
+                schemaLocation="model-types.xsd"/>
+        </xsd:schema>
+    </wsdl:types>
+    <!-- message-calculation -->
+    <wsdl:message name="calculationRequest">
+        <wsdl:part element="model:calculationRequest" name="request"/>
+    </wsdl:message>
+    <wsdl:message name="calculationResponse">
+        <wsdl:part element="model:calculationResponse" name="response"/>
+    </wsdl:message>
+    <!-- message-proposal -->
+    <wsdl:message name="proposalRequest">
+        <wsdl:part element="model:proposalRequest" name="request"/>
+    </wsdl:message>
+    <wsdl:message name="proposalResponse">
+        <wsdl:part element="model:proposalResponse" name="response"/>
+    </wsdl:message>
+    <!-- message-print -->
+    <wsdl:message name="printRequest">
+        <wsdl:part element="type:printRequest" name="request"/>
+    </wsdl:message>
+    <wsdl:message name="printResponse">
+        <wsdl:part element="type:printResponse" name="response"/>
+    </wsdl:message>
+    <!-- message-sign -->
+    <wsdl:message name="signRequest">
+        <wsdl:part element="type:signRequest" name="request"/>
+    </wsdl:message>
+    <wsdl:message name="signResponse">
+        <wsdl:part element="type:signResponse" name="response"/>
+    </wsdl:message>
+    <!-- portType -->
+    <wsdl:portType name="endpointHomeInterface">
+        <wsdl:operation name="calculation">
+            <wsdl:input message="tns:calculationRequest"/>
+            <wsdl:output message="tns:calculationResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="proposal">
+            <wsdl:input message="tns:proposalRequest"/>
+            <wsdl:output message="tns:proposalResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="print">
+            <wsdl:input message="tns:printRequest"/>
+            <wsdl:output message="tns:printResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="sign">
+            <wsdl:input message="tns:signRequest"/>
+            <wsdl:output message="tns:signResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <!-- binding -->
+    <wsdl:binding name="homeSoapBinding" type="tns:endpointHomeInterface">
+        <wsp:PolicyReference URI="#soapBindingPolicy"/>
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="calculation">
+            <soap:operation soapAction="calculation"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#soapBinding_Input_Policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#soapBinding_Output_Policy"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="proposal">
+            <soap:operation soapAction="proposal"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#soapBinding_Input_Policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#soapBinding_Output_Policy"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="print">
+            <soap:operation soapAction="print"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#soapBinding_Input_Policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#soapBinding_Output_Policy"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="sign">
+            <soap:operation soapAction="sign"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#soapBinding_Input_Policy"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+                <wsp:PolicyReference URI="#soapBinding_Output_Policy"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <!-- service -->
+    <wsdl:service name="home">
+        <wsdl:port binding="tns:homeSoapBinding" name="home">
+            <soap:address location="http://localhost:30080/SalesML/home"/>
+        </wsdl:port>
+    </wsdl:service>
+    <wsp:Policy wsu:Id="soapBindingPolicy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <wsam:Addressing wsp:Optional="true"/>
+                <sp:AsymmetricBinding>
+                    <wsp:Policy>
+                        <sp:InitiatorToken>
+                            <wsp:Policy>
+                                <sp:X509Token
+                                    sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+                                    <wsp:Policy>
+                                        <sp:WssX509V3Token10/>
+                                    </wsp:Policy>
+                                </sp:X509Token>
+                            </wsp:Policy>
+                        </sp:InitiatorToken>
+                        <sp:RecipientToken>
+                            <wsp:Policy>
+                                <sp:X509Token
+                                    sp:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/Always">
+                                    <wsp:Policy>
+                                        <sp:WssX509V3Token10/>
+                                    </wsp:Policy>
+                                </sp:X509Token>
+                            </wsp:Policy>
+                        </sp:RecipientToken>
+                        <sp:Layout>
+                            <wsp:Policy>
+                                <sp:Strict/>
+                            </wsp:Policy>
+                        </sp:Layout>
+                        <sp:IncludeTimestamp wsp:Optional="true"/>
+                        <sp:OnlySignEntireHeadersAndBody/>
+                        <sp:AlgorithmSuite>
+                            <wsp:Policy>
+                                <sp:Basic128/>
+                            </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                    </wsp:Policy>
+                </sp:AsymmetricBinding>
+                <sp:Wss10>
+                    <wsp:Policy>
+                        <sp:MustSupportRefIssuerSerial/>
+                    </wsp:Policy>
+                </sp:Wss10>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="soapBinding_Input_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:SignedParts>
+                    <sp:Body/>
+                </sp:SignedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsp:Policy wsu:Id="soapBinding_Output_Policy">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:SignedParts>
+                    <sp:Body/>
+                </sp:SignedParts>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+</wsdl:definitions>

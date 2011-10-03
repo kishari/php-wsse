@@ -1,0 +1,643 @@
+<!--
+Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.1-hudson-28-.
+-->
+<!--
+$Id: mkb-sales-tool-model-home.xsd 62603 2011-03-31 20:42:20Z tbi $ $Revision: 62603 $ MKB Sales Tool Webservice - Home XSD (c) 2010-2011 / inverso Gesellschaft für innovative Versicherungssoftware mbH modositasok: - schemaLocation a kb-sales-tool-model-type-broker.xsd-re
+-->
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+    xmlns:tns="http://i3s.inverso.de/mkb/sales/tool/model/home"
+    xmlns:nst="http://i3s.inverso.de/mkb/sales/tool/model/type"
+    targetNamespace="http://i3s.inverso.de/mkb/sales/tool/model/home" elementFormDefault="qualified"
+    version="1.0">
+    <!-- data-model-type -->
+    <import namespace="http://i3s.inverso.de/mkb/sales/tool/model/type"
+        schemaLocation="model-types.xsd"/>
+    <!-- - - - SimpleTypeSection - - - - -->
+    <!-- Type "buildingConstruction" -->
+    <simpleType name="buildingConstruction">
+        <restriction base="token">
+            <enumeration value="01">
+                <annotation>
+                    <documentation>Residential Building (Stonewall)</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="02">
+                <annotation>
+                    <documentation>Residential Building (Loam)</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="03">
+                <annotation>
+                    <documentation>Residential Building (Timber)</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="04">
+                <annotation>
+                    <documentation>Subsidiary Building (Stonewall)</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="05">
+                <annotation>
+                    <documentation>Subsidiary Building (flexible)</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="07">
+                <annotation>
+                    <documentation>Panel Building</documentation>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+    <!-- Type "buildingExploitationMethod" -->
+    <simpleType name="buildingExploitationMethod">
+        <restriction base="token">
+            <enumeration value="001">
+                <annotation>
+                    <documentation>Habitation</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="003">
+                <annotation>
+                    <documentation>Weekend Cottage</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="004">
+                <annotation>
+                    <documentation>Farm</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="005">
+                <annotation>
+                    <documentation>Wine Press House</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="006">
+                <annotation>
+                    <documentation>Barrack</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="007">
+                <annotation>
+                    <documentation>Storage Room</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="008">
+                <annotation>
+                    <documentation>Garage</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="009">
+                <annotation>
+                    <documentation>other Rooms</documentation>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+    <!-- Type "buildingHabitableSurface" -->
+    <simpleType name="buildingHabitableSurface">
+        <restriction base="token">
+            <pattern value="[0-9]{1,7}"/>
+        </restriction>
+    </simpleType>
+    <!-- Type "buildingOccupied" -->
+    <simpleType name="buildingOccupied">
+        <restriction base="token">
+            <enumeration value="Y">
+                <annotation>
+                    <documentation>Building occupied (yes)</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="N">
+                <annotation>
+                    <documentation>Building occupied (no)</documentation>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+    <!-- Type "buildingSpecification" -->
+    <simpleType name="buildingSpecification">
+        <restriction base="token">
+            <enumeration value="1">
+                <annotation>
+                    <documentation>Main Building</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="2">
+                <annotation>
+                    <documentation>Subsidiary Building</documentation>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+    <!-- Type "buildingType" -->
+    <simpleType name="buildingType">
+        <restriction base="token">
+            <enumeration value="EFH">
+                <annotation>
+                    <documentation>Single Family House</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="MFH">
+                <annotation>
+                    <documentation>Multi-Family House</documentation>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+    <!-- Type "buildingUnderConstruction" -->
+    <simpleType name="buildingUnderConstruction">
+        <restriction base="token">
+            <enumeration value="Y">
+                <annotation>
+                    <documentation>Building Under Construction</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="N">
+                <annotation>
+                    <documentation>Building Under Construction</documentation>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+    <!-- Type "bundleAllowance" -->
+    <simpleType name="bundleAllowance">
+        <restriction base="token">
+            <enumeration value="Y">
+                <annotation>
+                    <documentation>bundle allowance</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="N">
+                <annotation>
+                    <documentation>no bundle allowance</documentation>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+    <!-- Type "capacity" -->
+    <simpleType name="capacity">
+        <restriction base="token">
+            <pattern value="[0-9]{1,8}"/>
+        </restriction>
+    </simpleType>
+    <!-- Type "contractCondition" -->
+    <simpleType name="contractCondition">
+        <restriction base="token">
+            <pattern value="[0-9]{1,3}"/>
+        </restriction>
+    </simpleType>
+    <!-- Type "insuranceSum" -->
+    <simpleType name="insuranceSum">
+        <restriction base="token">
+            <pattern value="[0-9]{1,11}"/>
+        </restriction>
+    </simpleType>
+    <!-- Type "occupation" -->
+    <simpleType name="occupation">
+        <restriction base="token">
+            <pattern value="[0-9]{1,3}"/>
+        </restriction>
+    </simpleType>
+    <!-- Type "performanceLimit" -->
+    <simpleType name="performanceLimit">
+        <restriction base="token">
+            <enumeration value="001">
+                <annotation>
+                    <documentation>Performance Limit</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="002">
+                <annotation>
+                    <documentation>Performance Limit</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="003">
+                <annotation>
+                    <documentation>Performance Limit</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="004">
+                <annotation>
+                    <documentation>Performance Limit</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="005">
+                <annotation>
+                    <documentation>Performance Limit</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="006">
+                <annotation>
+                    <documentation>Performance Limit</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="007">
+                <annotation>
+                    <documentation>Performance Limit</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="014">
+                <annotation>
+                    <documentation>Performance Limit</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="015">
+                <annotation>
+                    <documentation>Performance Limit</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="016">
+                <annotation>
+                    <documentation>Performance Limit</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="017">
+                <annotation>
+                    <documentation>Performance Limit</documentation>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+    <!-- Type "productHome" -->
+    <simpleType name="productHome">
+        <restriction base="token">
+            <enumeration value="04">
+                <annotation>
+                    <documentation>Accident</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="03">
+                <annotation>
+                    <documentation>Private Liability</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="02">
+                <annotation>
+                    <documentation>Residental Building Insurance</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="01">
+                <annotation>
+                    <documentation>Household Insurance</documentation>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+    <!-- - - - - ComplexTypeSection - - - -->
+    <!-- Type "buildingConstructionIdentified" -->
+    <complexType name="buildingConstructionIdentified">
+        <simpleContent>
+            <extension base="tns:buildingConstruction">
+                <attribute name="id" type="ID" use="required"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+    <!-- Type "buildingExploitationMethodIdentified" -->
+    <complexType name="buildingExploitationMethodIdentified">
+        <simpleContent>
+            <extension base="tns:buildingExploitationMethod">
+                <attribute name="id" type="ID" use="required"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+    <!-- Type "buildingHabitableSurfaceIdentified" -->
+    <complexType name="buildingHabitableSurfaceIdentified">
+        <simpleContent>
+            <extension base="tns:buildingHabitableSurface">
+                <attribute name="id" type="ID" use="required"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+    <!-- Type "buildingIdentified" -->
+    <complexType name="buildingIdentified">
+        <all>
+            <element ref="tns:buildingSpecification" minOccurs="0" maxOccurs="1"/>
+            <element ref="nst:zip" minOccurs="0" maxOccurs="1"/>
+            <element ref="nst:city" minOccurs="0" maxOccurs="1"/>
+            <element ref="nst:streetHouse" minOccurs="0" maxOccurs="1"/>
+            <element ref="tns:buildingType" minOccurs="0" maxOccurs="1"/>
+            <element ref="tns:buildingConstruction" minOccurs="0" maxOccurs="1"/>
+            <element ref="tns:buildingHabitableSurface" minOccurs="0" maxOccurs="1"/>
+            <element ref="tns:buildingOccupied" minOccurs="0" maxOccurs="1"/>
+            <element ref="tns:buildingExploitationMethod" minOccurs="0" maxOccurs="1"/>
+            <element ref="tns:buildingUnderConstruction" minOccurs="0" maxOccurs="1"/>
+            <element ref="nst:loanCreditor" minOccurs="0" maxOccurs="1"/>
+            <element ref="nst:loanNumber" minOccurs="0" maxOccurs="1"/>
+            <element ref="nst:loanAmount" minOccurs="0" maxOccurs="1"/>
+            <element ref="nst:loanEndDate" minOccurs="0" maxOccurs="1"/>
+            <element ref="nst:clause" minOccurs="0" maxOccurs="1"/>
+            <element ref="tns:coverageList" maxOccurs="1"/>
+        </all>
+        <attribute name="id" type="ID" use="required"/>
+    </complexType>
+    <!-- Type "buildingListIdentified" -->
+    <complexType name="buildingListIdentified">
+        <sequence>
+            <element ref="tns:building" minOccurs="1" maxOccurs="3"/>
+        </sequence>
+        <attribute name="id" type="ID" use="required"/>
+    </complexType>
+    <!-- Type "buildingOccupiedIdentified" -->
+    <complexType name="buildingOccupiedIdentified">
+        <simpleContent>
+            <extension base="tns:buildingOccupied">
+                <attribute name="id" type="ID" use="required"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+    <!-- Type "buildingSpecificationIdentified" -->
+    <complexType name="buildingSpecificationIdentified">
+        <simpleContent>
+            <extension base="tns:buildingSpecification">
+                <attribute name="id" type="ID" use="required"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+    <!-- Type "buildingTypeIdentified" -->
+    <complexType name="buildingTypeIdentified">
+        <simpleContent>
+            <extension base="tns:buildingType">
+                <attribute name="id" type="ID" use="required"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+    <!-- Type "buildingUnderConstructionIdentified" -->
+    <complexType name="buildingUnderConstructionIdentified">
+        <simpleContent>
+            <extension base="tns:buildingUnderConstruction">
+                <attribute name="id" type="ID" use="required"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+    <!-- Type "calculationRequest" -->
+    <complexType name="calculationRequest">
+        <sequence>
+            <element maxOccurs="1" ref="nst:header"/>
+            <element maxOccurs="1" ref="nst:general"/>
+            <element maxOccurs="1" ref="nst:partnerList"/>
+            <element maxOccurs="1" ref="tns:homeList"/>
+        </sequence>
+    </complexType>
+    <!-- Type "calculationResponse" -->
+    <complexType name="calculationResponse">
+        <sequence>
+            <element maxOccurs="1" ref="nst:header"/>
+            <element maxOccurs="1" ref="nst:general"/>
+            <element maxOccurs="1" ref="nst:partnerList"/>
+            <element maxOccurs="1" ref="tns:homeList"/>
+            <element minOccurs="0" ref="nst:result"/>
+            <element minOccurs="0" ref="nst:errorList"/>
+        </sequence>
+    </complexType>
+    <!-- Type "capacityIdentified" -->
+    <complexType name="capacityIdentified">
+        <simpleContent>
+            <extension base="tns:capacity">
+                <attribute name="id" type="ID" use="required"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+    <!-- Type "contractConditionIdentified" -->
+    <complexType name="contractConditionIdentified">
+        <simpleContent>
+            <extension base="tns:contractCondition">
+                <attribute name="id" type="ID" use="required"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+    <!-- Type "coverageIdentified" -->
+    <complexType name="coverageIdentified">
+        <all>
+            <element ref="nst:coverageType"/>
+            <element ref="tns:performanceLimit" minOccurs="0" maxOccurs="1"/>
+            <element ref="tns:insuranceSum" minOccurs="0" maxOccurs="1"/>
+            <element ref="tns:capacity" minOccurs="0" maxOccurs="1"/>
+            <element ref="tns:occupation" minOccurs="0" maxOccurs="1"/>
+        </all>
+        <attribute name="id" type="ID" use="required"/>
+    </complexType>
+    <!-- Type "coverageListIdentified" -->
+    <complexType name="coverageListIdentified">
+        <sequence>
+            <element maxOccurs="unbounded" ref="tns:coverage"/>
+        </sequence>
+        <attribute name="id" type="ID" use="required"/>
+    </complexType>
+    <!-- Type "homeIdentified" -->
+    <complexType name="homeIdentified">
+        <all>
+            <element ref="tns:productHome"/>
+            <element name="contractCondition" type="tns:contractConditionIdentified" minOccurs="0"
+                maxOccurs="1"/>
+            <element name="bundleAllowance" type="tns:bundleAllowance" minOccurs="0" maxOccurs="1"/>
+            <element name="specialAllowance" type="nst:natural1x11" minOccurs="0" maxOccurs="1"/>
+            <element ref="tns:buildingList" minOccurs="0" maxOccurs="1"/>
+            <element ref="tns:coverageList" minOccurs="0" maxOccurs="1"/>
+        </all>
+        <attribute name="id" type="ID" use="required"/>
+    </complexType>
+    <!-- Type "homeListIdentified" -->
+    <complexType name="homeListIdentified">
+        <sequence>
+            <element ref="tns:home" minOccurs="1" maxOccurs="4"/>
+        </sequence>
+        <attribute name="id" type="ID" use="required"/>
+    </complexType>
+    <!-- Type "insuranceSumIdentified" -->
+    <complexType name="insuranceSumIdentified">
+        <simpleContent>
+            <extension base="tns:insuranceSum">
+                <attribute name="id" type="ID" use="required"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+    <!-- Type "occupationIdentified" -->
+    <complexType name="occupationIdentified">
+        <simpleContent>
+            <extension base="tns:occupation">
+                <attribute name="id" type="ID" use="required"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+    <!-- Type "performanceLimitIdentified" -->
+    <complexType name="performanceLimitIdentified">
+        <simpleContent>
+            <extension base="tns:performanceLimit">
+                <attribute name="id" type="ID" use="required"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+    <!-- Type "productHomeIdentified" -->
+    <complexType name="productHomeIdentified">
+        <simpleContent>
+            <extension base="tns:productHome">
+                <attribute name="id" type="ID" use="required"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+    <!-- Type "proposalRequest" -->
+    <complexType name="proposalRequest">
+        <sequence>
+            <element maxOccurs="1" ref="nst:header"/>
+            <element maxOccurs="1" ref="nst:general"/>
+            <element maxOccurs="1" ref="nst:partnerList"/>
+            <element maxOccurs="1" ref="tns:homeList"/>
+        </sequence>
+    </complexType>
+    <!-- Type "proposalResponse" -->
+    <complexType name="proposalResponse">
+        <sequence>
+            <element maxOccurs="1" ref="nst:header"/>
+            <element maxOccurs="1" ref="nst:general"/>
+            <element maxOccurs="1" ref="nst:partnerList"/>
+            <element maxOccurs="1" ref="tns:homeList"/>
+            <element minOccurs="0" ref="nst:result"/>
+            <element minOccurs="0" ref="nst:errorList"/>
+        </sequence>
+    </complexType>
+    <!-- - - - - ElementSection - - - -->
+    <!-- Element "building" -->
+    <element name="building" type="tns:buildingIdentified">
+        <annotation>
+            <documentation>EN: "Building." DE: "Gebaeude." HU: "."</documentation>
+        </annotation>
+    </element>
+    <!-- Element "buildingConstruction" -->
+    <element name="buildingConstruction" type="tns:buildingConstructionIdentified">
+        <annotation>
+            <documentation>EN: "Building Construction." DE: "Bauart." HU: "."</documentation>
+        </annotation>
+    </element>
+    <!-- Element "buildingExploitationMethod" -->
+    <element name="buildingExploitationMethod" type="tns:buildingExploitationMethodIdentified">
+        <annotation>
+            <documentation> EN: "Exploitation Method." DE: "Nutzungsart." HU: "." </documentation>
+        </annotation>
+    </element>
+    <!-- Element "buildingHabitableSurface" -->
+    <element name="buildingHabitableSurface" type="tns:buildingHabitableSurfaceIdentified">
+        <annotation>
+            <documentation> EN: "Habitable Surface." DE: "Wohnflaeche." HU: "." </documentation>
+        </annotation>
+    </element>
+    <!-- Element "buildingList" -->
+    <element name="buildingList" type="tns:buildingListIdentified">
+        <annotation>
+            <documentation>EN: "Building List." DE: "Gebaeudeliste." HU: "."</documentation>
+        </annotation>
+    </element>
+    <!-- Element "buildingOccupied" -->
+    <element name="buildingOccupied" type="tns:buildingOccupiedIdentified">
+        <annotation>
+            <documentation> EN: "Building Occupied." DE: "Gebaeude bewohnt." HU: "."
+            </documentation>
+        </annotation>
+    </element>
+    <!-- Element "buildingSpecification" -->
+    <element name="buildingSpecification" type="tns:buildingSpecificationIdentified">
+        <annotation>
+            <documentation> EN: "Building Specification." DE: "Risikobetriebsart." HU: "."
+            </documentation>
+        </annotation>
+    </element>
+    <!-- Element "buildingType" -->
+    <element name="buildingType" type="tns:buildingTypeIdentified">
+        <annotation>
+            <documentation>EN: "Building Type." DE: "Gebaeudeart." HU: "."</documentation>
+        </annotation>
+    </element>
+    <!-- Element "buildingUnderConstruction" -->
+    <element name="buildingUnderConstruction" type="tns:buildingUnderConstructionIdentified">
+        <annotation>
+            <documentation> EN: "Building Under Construction." DE: "Gebaeude in Bau" HU: "."
+            </documentation>
+        </annotation>
+    </element>
+    <!-- Element "calculationRequest" -->
+    <element name="calculationRequest" type="tns:calculationRequest">
+        <annotation>
+            <documentation> EN: "Home-Calculation-Request." DE: "Sach-Berechnungsanfrage." HU:
+                "Autok szamitas kerelmet." </documentation>
+        </annotation>
+    </element>
+    <!-- Element "calculationResponse" -->
+    <element name="calculationResponse" type="tns:calculationResponse">
+        <annotation>
+            <documentation> EN: "Home-Calculation-Response." DE: "Sach-Berechnungsantwort." HU:
+                "Autok szamitas valasz." </documentation>
+        </annotation>
+    </element>
+    <!-- Element "capacity" -->
+    <element name="capacity" type="tns:capacityIdentified">
+        <annotation>
+            <documentation>EN: "Capacity." DE: "Volumen." HU: "."</documentation>
+        </annotation>
+    </element>
+    <!-- Element "coverage" -->
+    <element name="coverage" type="tns:coverageIdentified">
+        <annotation>
+            <documentation> EN: "Car insurance division." DE: "Sach-Versicherungssparte." HU:
+                "Gepjarmubiztositas korzet." </documentation>
+        </annotation>
+    </element>
+    <!-- Element "coverageList" -->
+    <element name="coverageList" type="tns:coverageListIdentified">
+        <annotation>
+            <documentation> EN: "Coverage list." DE: "Liste der Versicherungssparten." HU: "???"
+            </documentation>
+        </annotation>
+    </element>
+    <!-- Element "home" -->
+    <element name="home" type="tns:homeIdentified">
+        <annotation>
+            <documentation>EN: "Home." DE: "Sach-Daten." HU: "."</documentation>
+        </annotation>
+    </element>
+    <!-- Element "homeList" -->
+    <element name="homeList" type="tns:homeListIdentified">
+        <annotation>
+            <documentation>EN: "Homelist." DE: "Sach-Liste." HU: "."</documentation>
+        </annotation>
+    </element>
+    <!-- Element "insuranceSum" -->
+    <element name="insuranceSum" type="tns:insuranceSumIdentified">
+        <annotation>
+            <documentation> EN: "Insurance Sum." DE: "Versicherungssumme." HU: "." </documentation>
+        </annotation>
+    </element>
+    <!-- Element "occupation" -->
+    <element name="occupation" type="tns:occupationIdentified">
+        <annotation>
+            <documentation> EN: "Occupation at Location." DE: "Taetigkeit am Versicherungsort." HU:
+                "." </documentation>
+        </annotation>
+    </element>
+    <!-- Element "performanceLimit" -->
+    <element name="performanceLimit" type="tns:performanceLimitIdentified">
+        <annotation>
+            <documentation> EN: "Performance Limit." DE: "Leistungsgrenzen." HU: "."
+            </documentation>
+        </annotation>
+    </element>
+    <!-- Element "productHome" -->
+    <element name="productHome" type="tns:productHomeIdentified">
+        <annotation>
+            <documentation> EN: "Product Id for Home." DE: "Produktnummer der Sach-Produkte." HU:
+                "." </documentation>
+        </annotation>
+    </element>
+    <!-- Element "proposalRequest" -->
+    <element name="proposalRequest" type="tns:proposalRequest">
+        <annotation>
+            <documentation> EN: "Home-Proposal-Request." DE: "Sach-Antrag-Anfrage." HU: "Autoipari
+                alkalmazasi kerelem." </documentation>
+        </annotation>
+    </element>
+    <!-- Element "proposalResponse" -->
+    <element name="proposalResponse" type="tns:proposalResponse">
+        <annotation>
+            <documentation> EN: "Home-Proposal-Response." DE: "Sach-Antrag-Antwort." HU: "Auto keres
+                valasz." </documentation>
+        </annotation>
+    </element>
+</schema>
