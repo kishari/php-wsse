@@ -1,3 +1,3 @@
-*.pem
+*.pem.tmp
 PHP5/**
 generated_classes
