@@ -12,7 +12,7 @@ try {
         $oWS = new WSSoapClient('wsdl/home.wsdl',array(
             'trace'=>TRUE
             ,'cache_wsdl'=>0
-            ,'location' => 'http://localhost:25902/SalesML/home'
+            ,'location' => 'https://services.mkbb.hu:8080/SalesML/home'
 	));
         
         $header = new Model\Types\header();
