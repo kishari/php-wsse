@@ -401,6 +401,27 @@ class addressIdentified {
 	 * @var countryCodeIdentified
 	 */
 	public $country;
+
+        public function getAsSOAP() {
+            $r = array();
+
+            if (isset ($this->addressType))
+               $r['addressType'] = new SoapVar($this->addressType, XSD_TOKEN, null, null, null, \ns_type);
+
+            if (isset ($this->streetHouse))
+               $r['streetHouse'] = new SoapVar($this->streetHouse, \XSD_NORMALIZEDSTRING, null, null, null, \ns_type);
+
+            if (isset ($this->zip))
+               $r['zip'] = new SoapVar($this->zip, XSD_TOKEN, null, null, null, \ns_type);
+
+            if (isset ($this->city))
+               $r['city'] = new SoapVar($this->city, XSD_NORMALIZEDSTRING, null, null, null, \ns_type);
+
+            if (isset ($this->country))
+               $r['country'] = new SoapVar($this->country, XSD_TOKEN, null, null, null, \ns_type);
+
+            return $r;
+        }
 }}
 
 if (!class_exists("addressListIdentified")) {
@@ -410,9 +431,22 @@ if (!class_exists("addressListIdentified")) {
 class addressListIdentified {
 	/**
 	 * @access public
-	 * @var addressIdentified
+	 * @var list of addressIdentified
 	 */
-	public $address;
+	public $addresses = array();
+
+        public function getAsSOAP() {
+            $r = array();
+            if (sizeof($this->addresses) == 0) {
+                $r[] = new SoapVar("", \SOAP_ENC_OBJECT, null, null, 'address', \ns_type);
+            }
+            
+            foreach($this->addresses as $a) {
+                $r[] = new SoapVar($a->getAsSOAP(), SOAP_ENC_OBJECT, null, null, 'address', \ns_type);
+            }
+
+            return new SoapVar($r, SOAP_ENC_OBJECT, null, null, 'addressList', \ns_type);
+        }
 }}
 
 if (!class_exists("addressTypeIdentified")) {
@@ -622,6 +656,52 @@ class generalIdentified {
 	public $eMailDecl;
 
         public function getAsSOAP() {
+            $r = array();
+
+            if (isset ($this->product))
+                    $r['product'] = new SoapVar($this->product, \XSD_TOKEN, null, null, null, \ns_type);
+
+            if (isset ($this->beginDate))
+                    $r['beginDate'] = new SoapVar($this->beginDate, \XSD_STRING, null, null, null, \ns_type);
+
+            if (isset ($this->mainDue))
+                    $r['mainDue'] = new SoapVar($this->mainDue, \XSD_STRING, null, null, null, \ns_type);
+
+            if (isset ($this->bookingFrequency))
+                    $r['bookingFrequency'] = new SoapVar($this->bookingFrequency, \XSD_TOKEN, null, null, null, \ns_type);
+
+            if (isset ($this->paymentMethod))
+                    $r['paymentMethod'] = new SoapVar($this->paymentMethod, \XSD_TOKEN, null, null, null, \ns_type);
+
+            if (isset ($this->valuta))
+                    $r['valuta'] = new SoapVar($this->valuta, \XSD_TOKEN, null, null, null, \ns_type);
+
+            if (isset ($this->changeReason))
+                    $r['changeReason'] = new SoapVar($this->changeReason, \XSD_TOKEN, null, null, null, \ns_type);
+
+            if (isset ($this->proposalNumber))
+                    $r['proposalNumber'] = new SoapVar($this->proposalNumber, \XSD_TOKEN, null, null, null, \ns_type);
+
+            if (isset ($this->duration))
+                    $r['duration'] = new SoapVar($this->duration, \XSD_STRING, null, null, null, \ns_type);
+
+            if (isset ($this->prepayment))
+                    $r['prepayment'] = new SoapVar($this->prepayment, \XSD_TOKEN, null, null, null, \ns_type);
+
+            if (isset ($this->dataRealityDecl))
+                    $r['dataRealityDecl'] = new SoapVar($this->dataRealityDecl, \XSD_NORMALIZEDSTRING, null, null, null, \ns_type);
+
+            if (isset ($this->conditionAprovalDecl))
+                    $r['conditionAprovalDecl'] = new SoapVar($this->conditionAprovalDecl, \XSD_NORMALIZEDSTRING, null, null, null, \ns_type);
+
+            if (isset ($this->dataHandlingDecl))
+                    $r['dataHandlingDecl'] = new SoapVar($this->dataHandlingDecl, \XSD_NORMALIZEDSTRING, null, null, null, \ns_type);
+
+            if (isset ($this->eMailDecl))
+                    $r['eMailDecl'] = new SoapVar($this->eMailDecl, \XSD_NORMALIZEDSTRING, null, null, null, \ns_type);
+
+
+            return $r;
             
         }
 }}
@@ -984,7 +1064,7 @@ class partnerIdentified {
                 $r['postRecipientAddressId'] = new SoapVar($this->postRecipientAddressId, XSD_TOKEN, null, null, null, \ns_type);
 
             if (isset ($this->addressList))
-                $r['addressList'] = new SoapVar($this->addressList, SOAP_ENC_OBJECT, null, null, null, \ns_type);
+                $r['addressList'] = $this->addressList->getAsSOAP ();//new SoapVar($this->addressList, SOAP_ENC_OBJECT, null, null, null, \ns_type);
 
 
             return $r;
@@ -1008,6 +1088,11 @@ class partnerListIdentified {
 
         public function getAsSOAP() {
             $r = array();
+
+            if (\sizeof($this->partners) == 0) {
+                $r[] = new SoapVar("", SOAP_ENC_OBJECT, null, null, 'partner', \ns_type);
+            }
+
             foreach($this->partners as $p) {
                 
                 $r[] = new SoapVar($p->getAsSOAP(), SOAP_ENC_OBJECT, null, null, 'partner', \ns_type);

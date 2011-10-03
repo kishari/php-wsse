@@ -497,6 +497,17 @@ class proposalRequest {
 	 * @var homeListIdentified
 	 */
 	public $homeList;
+
+        public function getAsSOAP() {
+            $r = array (
+                'header' => new SoapVar($this->header->getAsSOAP(), SOAP_ENC_OBJECT, null, null, null, ns_type)
+                ,'general' => new SoapVar($this->general->getAsSOAP(), SOAP_ENC_OBJECT, null, null, null, ns_type)
+                ,'partnerList' => new SoapVar($this->partnerList->getAsSOAP(), SOAP_ENC_OBJECT, null, null, null, ns_type)
+                ,'homeList' => new SoapVar($this->homeList->getAsSOAP(), SOAP_ENC_OBJECT, null, null, null, ns_type)
+            );
+
+            return $r;
+        }
 }}
 
 if (!class_exists("proposalResponse")) {
