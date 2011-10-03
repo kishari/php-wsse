@@ -110,7 +110,7 @@ class motor extends SoapClient {
 		"countryCodeIdentified" => "countryCodeIdentified",
 		"coverageTypeIdentified" => "coverageTypeIdentified",
 		"dateIdentified" => "dateIdentified",
-		"string" => "date_string",
+		"string" => "dateString",
 		"elementReference" => "elementReference",
 		"NCName" => "NCName",
 		"emailIdentified" => "emailIdentified",

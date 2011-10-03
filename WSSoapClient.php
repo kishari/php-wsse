@@ -3,6 +3,7 @@
 require('types/soap-wsa.php');
 require('types/soap-wsse.php');
 require('types/IdGenerator.php');
+//require('types/model-types.php');
 
 define('PRIVATE_KEY', 'private.pem');
 define('PRIVATE_KEY_PASSWORD', 'passwordToPrivateKey');

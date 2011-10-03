@@ -1,6 +1,8 @@
 <?php
 
-define("ns_type", "http://i3s.inverso.de/mkb/sales/tool/model/type");
+if(!defined('ns_type')) {
+    define("ns_type", "http://i3s.inverso.de/mkb/sales/tool/model/type");
+}
 
 if (!class_exists("addressType")) {
 /**
@@ -65,11 +67,18 @@ if (!class_exists("coverageType")) {
 class coverageType {
 }}
 
+if (!class_exists("dateString")) {
+/**
+ * dateString
+ */
+class dateString {
+}}
+
 if (!class_exists("dateIdentified")) {
 /**
  * dateIdentified
  */
-class dateIdentified extends date_string {
+class dateIdentified extends dateString {
 }}
 
 if (!class_exists("email")) {
@@ -511,18 +520,18 @@ class errorList {
 	public $error;
 }}
 
-if (!class_exists("elementReference")) {
-/**
- * elementReference
- */
-class elementReference extends NCName {
-}}
-
 if (!class_exists("NCName")) {
 /**
  * NCName
  */
 class NCName {
+}}
+
+if (!class_exists("elementReference")) {
+/**
+ * elementReference
+ */
+class elementReference extends NCName {
 }}
 
 if (!class_exists("falseTrueIdentified")) {
@@ -649,6 +658,31 @@ class header {
 	 * @var dateTime
 	 */
 	public $timestamp;
+
+        public function getAsSOAP() {
+            $r = array();
+            if (isset ($this->version))
+                $r['version'] = new SoapVar($this->version, XSD_TOKEN, null, null, null, ns_type);
+
+            if (isset ($this->language))
+                $r['language'] = new SoapVar($this->language, XSD_TOKEN, null, null, null, ns_type);
+
+            if (isset ($this->agentNumber))
+                $r['agentNumber'] = new SoapVar($this->agentNumber, XSD_TOKEN, null, null, null, ns_type);
+
+            if (isset ($this->subAgentNumber))
+                $r['subAgentNumber'] = new SoapVar($this->subAgentNumber, XSD_TOKEN, null, null, null, ns_type);
+
+            if (isset ($this->signature))
+                $r['signature'] = new SoapVar($this->signature, XSD_NORMALIZEDSTRING, null, null, null, ns_type);
+
+            if (isset ($this->messageNumber))
+                $r['messageNumber'] = new SoapVar($this->messageNumber, XSD_TOKEN, null, null, null, ns_type);
+
+            $r['timestamp'] = new SoapVar($this->timestamp, XSD_DATETIME, null, null, null, ns_type);
+
+            return $r;
+        }
 }}
 
 if (!class_exists("genderIdentified")) {
@@ -1017,6 +1051,18 @@ class signContainerIdentified {
 	 * @var contractNumber
 	 */
 	public $contractNumber;
+
+        public function getAsSOAP() {
+            $r = array();
+
+            if (isset ($this->proposalNumber))
+                $r['proposalNumber'] = new SoapVar($this->proposalNumber, XSD_TOKEN, null, null, null, ns_type);
+
+            if (isset ($this->contractNumber))
+                $r['contractNumber'] = new SoapVar($this->contractNumber, XSD_TOKEN, null, null, null, ns_type);
+
+            return $r;
+        }
 }}
 
 if (!class_exists("signRequest")) {
@@ -1034,6 +1080,15 @@ class signRequest {
 	 * @var signContainerIdentified
 	 */
 	public $sign;
+
+        public function getAsSOAP() {
+            $r = array (
+                'header' => new SoapVar($this->header->getAsSOAP(), SOAP_ENC_OBJECT, null, null, null, ns_type)
+                ,'sign' => new SoapVar($this->sign->getAsSOAP(), SOAP_ENC_OBJECT, null, null, null, ns_type)
+            );
+
+            return $r;
+        }
 }}
 
 if (!class_exists("signResponse")) {
@@ -1077,13 +1132,6 @@ if (!class_exists("string1x200Identified")) {
  * string1x200Identified
  */
 class string1x200Identified extends string1x200 {
-}}
-
-if (!class_exists("date_string")) {
-/**
- * date_string
- */
-class date_string {
 }}
 
 if (!class_exists("string1x30Identified")) {

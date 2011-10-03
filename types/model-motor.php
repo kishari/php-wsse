@@ -1,6 +1,8 @@
 <?php
 
-define("ns_model_motor", "http://i3s.inverso.de/mkb/sales/tool/model/motor");
+if(!defined('ns_model_motor')) {
+    define("ns_model_motor", "http://i3s.inverso.de/mkb/sales/tool/model/motor");
+}
 
 require('types/model-types.php');
 

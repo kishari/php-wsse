@@ -1,8 +1,10 @@
 <?php
 
-require('types/model-types.php');
+if(!defined('ns_model_home')) {
+    define("ns_model_home", "http://i3s.inverso.de/mkb/sales/tool/model/home");
+}
 
-define("ns_model_home", "http://i3s.inverso.de/mkb/sales/tool/model/home");
+require('types/model-types.php');
 
 if (!class_exists("buildingConstruction")) {
 /**
