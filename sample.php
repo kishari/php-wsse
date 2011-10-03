@@ -9,31 +9,39 @@ require('types/motor.php');
 require('types/home.php');
 
 try {
-        $oWS = new WSSoapClient('wsdl/motor.wsdl',array(
+        $oWS = new WSSoapClient('wsdl/home.wsdl',array(
             'trace'=>TRUE
             ,'cache_wsdl'=>0
-            ,'location' => 'http://localhost:25902/SalesML/motor'
+            ,'location' => 'http://localhost:25902/SalesML/home'
 	));
         
-        $header = new header();          
+        $header = new Model\Types\header();
         $header->version = '1.0';
         $header->language = 'HU';
         $header->agentNumber = '0';
         $header->messageNumber = '0001';
 
-        $sign = new signContainerIdentified();
-        $sign->proposalNumber = '100';
+        $general = new Model\Types\generalIdentified();
 
-        $signRequest = new signRequest();
-        $signRequest->header=$header;
-        $signRequest->sign=$sign;
+        $partnerList = new Model\Types\partnerListIdentified();
+        $partnerList->partners['0'] = new Model\Types\partnerIdentified();
+        $partnerList->partners['1'] = new Model\Types\partnerIdentified();
+
+        $homeList = new Model\Home\homeListIdentified();
+        
+        $calculationRequest = new Model\Home\calculationRequest();
+
+        $calculationRequest->header=$header;
+        $calculationRequest->general=$general;
+        $calculationRequest->partnerList=$partnerList;
+        $calculationRequest->homeList=$homeList;
         
        
         // WS-SEC SOAP hivas
-        $request = $signRequest->getAsSOAP();       
+        $request = $calculationRequest->getAsSOAP();
         //print_r($request);
 
-        $out = $oWS->__soapCall('sign',array('parameters'=>$request));
+        $out = $oWS->__soapCall('calculation',array('parameters'=>$request));
 
         print_r($out);
 } catch (SoapFault $fault) {

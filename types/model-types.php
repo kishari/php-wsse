@@ -1,5 +1,9 @@
 <?php
 
+namespace Model\Types;
+
+use \SoapVar;
+
 if(!defined('ns_type')) {
     define("ns_type", "http://i3s.inverso.de/mkb/sales/tool/model/type");
 }
@@ -616,6 +620,10 @@ class generalIdentified {
 	 * @var string1x70Identified
 	 */
 	public $eMailDecl;
+
+        public function getAsSOAP() {
+            
+        }
 }}
 
 if (!class_exists("header")) {
@@ -913,11 +921,23 @@ if (!class_exists("partnerListIdentified")) {
  * partnerListIdentified
  */
 class partnerListIdentified {
-	/**
+	
+        public $partners = array();
+        /**
 	 * @access public
 	 * @var partnerIdentified
 	 */
 	public $partner;
+
+        public function getAsSOAP() {
+            $r = array();
+
+            foreach($partners as $p) {
+                print_r($p->firstname);
+            }
+
+            return $r;
+        }
 }}
 
 if (!class_exists("paymentMethodIdentified")) {

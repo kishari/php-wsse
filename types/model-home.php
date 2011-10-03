@@ -1,10 +1,14 @@
 <?php
 
+namespace Model\Home;
+
+require_once('types/model-types.php');
+
+use \SoapVar;
+
 if(!defined('ns_model_home')) {
     define("ns_model_home", "http://i3s.inverso.de/mkb/sales/tool/model/home");
 }
-
-require('types/model-types.php');
 
 if (!class_exists("buildingConstruction")) {
 /**
@@ -277,6 +281,17 @@ class calculationRequest {
 	 * @var homeListIdentified
 	 */
 	public $homeList;
+
+        public function getAsSOAP() {
+            $r = array (
+                'header' => new SoapVar($this->header->getAsSOAP(), SOAP_ENC_OBJECT, null, null, null, ns_type)
+                ,'general' => new SoapVar($this->general->getAsSOAP(), SOAP_ENC_OBJECT, null, null, null, ns_type)
+                ,'partnerList' => new SoapVar($this->partnerList->getAsSOAP(), SOAP_ENC_OBJECT, null, null, null, ns_type)
+                ,'homeList' => new SoapVar($this->homeList->getAsSOAP(), SOAP_ENC_OBJECT, null, null, null, ns_type)
+            );
+
+            return $r;
+        }
 }}
 
 if (!class_exists("calculationResponse")) {
@@ -421,6 +436,12 @@ class homeListIdentified {
 	 * @var homeIdentified
 	 */
 	public $home;
+
+        public function getAsSOAP() {
+            $r = array();
+
+            return $r;
+        }
 }}
 
 if (!class_exists("insuranceSumIdentified")) {
@@ -514,6 +535,5 @@ class proposalResponse {
 	 */
 	public $errorList;
 }}
-
 
 ?>
