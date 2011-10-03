@@ -1,12 +1,11 @@
 <?php
 
-require('soap-wsa.php');
-require('soap-wsse.php');
-require('IdGenerator.php');
+require('types/soap-wsa.php');
+require('types/soap-wsse.php');
+require('types/IdGenerator.php');
 
 define('PRIVATE_KEY', 'private.pem');
 define('PRIVATE_KEY_PASSWORD', 'passwordToPrivateKey');
-//define('CERTIFICATE', 'certificate.pem');
 
 class WSSoapClient extends SoapClient {
 	

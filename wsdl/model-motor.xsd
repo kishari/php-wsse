@@ -9,10 +9,16 @@
 
      modositasok az eredetihez kepest:
      - sajat motor/bmMessageList listank felveve (elemei bmMessage tipusuak.)
---><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://i3s.inverso.de/mkb/sales/tool/model/motor" xmlns:nst="http://i3s.inverso.de/mkb/sales/tool/model/type" targetNamespace="http://i3s.inverso.de/mkb/sales/tool/model/motor" elementFormDefault="qualified" version="1.0">
+-->
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:tns="http://i3s.inverso.de/mkb/sales/tool/model/motor"
+  xmlns:nst="http://i3s.inverso.de/mkb/sales/tool/model/type"
+  targetNamespace="http://i3s.inverso.de/mkb/sales/tool/model/motor" elementFormDefault="qualified"
+  version="1.0">
 
   <!-- data-model-type -->
-  <import namespace="http://i3s.inverso.de/mkb/sales/tool/model/type" schemaLocation="types.xsd" />
+  <import namespace="http://i3s.inverso.de/mkb/sales/tool/model/type"
+    schemaLocation="model-types.xsd"/>
 
   <!-- - - - SimpleTypeSection - - - - -->
 
@@ -50,21 +56,21 @@
   <!-- Type "bonusMalus" -->
   <simpleType name="bonusMalus">
     <restriction base="token">
-      <enumeration value="A00" />
-      <enumeration value="B01" />
-      <enumeration value="B02" />
-      <enumeration value="B03" />
-      <enumeration value="B04" />
-      <enumeration value="B05" />
-      <enumeration value="B06" />
-      <enumeration value="B07" />
-      <enumeration value="B08" />
-      <enumeration value="B09" />
-      <enumeration value="B10" />
-      <enumeration value="M01" />
-      <enumeration value="M02" />
-      <enumeration value="M03" />
-      <enumeration value="M04" />
+      <enumeration value="A00"/>
+      <enumeration value="B01"/>
+      <enumeration value="B02"/>
+      <enumeration value="B03"/>
+      <enumeration value="B04"/>
+      <enumeration value="B05"/>
+      <enumeration value="B06"/>
+      <enumeration value="B07"/>
+      <enumeration value="B08"/>
+      <enumeration value="B09"/>
+      <enumeration value="B10"/>
+      <enumeration value="M01"/>
+      <enumeration value="M02"/>
+      <enumeration value="M03"/>
+      <enumeration value="M04"/>
     </restriction>
   </simpleType>
 
@@ -73,7 +79,8 @@
     <restriction base="token">
       <enumeration value="11">
         <annotation>
-          <documentation>1.500 Mio HUF f. P, 500 Mio. HUF f. S und 500 Mio. HUF. f. V</documentation>
+          <documentation>1.500 Mio HUF f. P, 500 Mio. HUF f. S und 500 Mio. HUF. f.
+            V</documentation>
         </annotation>
       </enumeration>
       <enumeration value="1020">
@@ -168,7 +175,7 @@
   <!-- Type "eurotax" -->
   <simpleType name="eurotax">
     <restriction base="token">
-      <pattern value="[0-9]{4}[A-Z]{1}[0-9]{3}" />
+      <pattern value="[0-9]{4}[A-Z]{1}[0-9]{3}"/>
     </restriction>
   </simpleType>
 
@@ -177,32 +184,38 @@
     <restriction base="token">
       <enumeration value="2126">
         <annotation>
-          <documentation>EN: "Leather upholstery." DE: "Lederpolsterung." HU: "Borkarpit."</documentation>
+          <documentation>EN: "Leather upholstery." DE: "Lederpolsterung." HU:
+            "Borkarpit."</documentation>
         </annotation>
       </enumeration>
       <enumeration value="2127">
         <annotation>
-          <documentation>EN: "Navigation device." DE: "Navigationsgerat." HU: "Navigacios berendezes."</documentation>
+          <documentation>EN: "Navigation device." DE: "Navigationsgerat." HU: "Navigacios
+            berendezes."</documentation>
         </annotation>
       </enumeration>
       <enumeration value="2128">
         <annotation>
-          <documentation>EN: "Alloy wheels." DE: "Alufelgen" HU: "Konnyufem kerektarcsak."</documentation>
+          <documentation>EN: "Alloy wheels." DE: "Alufelgen" HU: "Konnyufem
+            kerektarcsak."</documentation>
         </annotation>
       </enumeration>
       <enumeration value="2129">
         <annotation>
-          <documentation>EN: "Radio/Multimedia >150.000 HUF" DE: "Radio/Multimedia >150.000 HUF" HU: "150.000 Ft ertek feletti adudio berendezes"</documentation>
+          <documentation>EN: "Radio/Multimedia >150.000 HUF" DE: "Radio/Multimedia >150.000 HUF" HU:
+            "150.000 Ft ertek feletti adudio berendezes"</documentation>
         </annotation>
       </enumeration>
       <enumeration value="2130">
         <annotation>
-          <documentation>EN: "Air conditioning." DE: "Klimaanlage." HU: "Automata valto."</documentation>
+          <documentation>EN: "Air conditioning." DE: "Klimaanlage." HU: "Automata
+            valto."</documentation>
         </annotation>
       </enumeration>
       <enumeration value="2131">
         <annotation>
-          <documentation>EN: "Bi-Xenon headlights." DE: "Bi-Xenonscheinwerfer." HU: "Xen."</documentation>
+          <documentation>EN: "Bi-Xenon headlights." DE: "Bi-Xenonscheinwerfer." HU:
+            "Xen."</documentation>
         </annotation>
       </enumeration>
     </restriction>
@@ -253,7 +266,8 @@
   <!-- Type "registrationNumber" -->
   <simpleType name="registrationNumber">
     <restriction base="token">
-      <pattern value="([A-Z]{1}[A-Za-z]{2}-[0-9]{3})|([A-Z]{4}-[0-9]{1,2})|([A-Z]{2} [0-9]{2}-[0-9]{2})" />
+      <pattern
+        value="([A-Z]{1}[A-Za-z]{2}-[0-9]{3})|([A-Z]{4}-[0-9]{1,2})|([A-Z]{2} [0-9]{2}-[0-9]{2})"/>
     </restriction>
   </simpleType>
 
@@ -371,13 +385,13 @@
   <!-- Type "vehicleUsage" -->
   <simpleType name="vehicleUsage">
     <restriction base="token">
-      <enumeration value="1" />
-      <enumeration value="2" />
-      <enumeration value="3" />
-      <enumeration value="4" />
-      <enumeration value="5" />
-      <enumeration value="6" />
-      <enumeration value="7" />
+      <enumeration value="1"/>
+      <enumeration value="2"/>
+      <enumeration value="3"/>
+      <enumeration value="4"/>
+      <enumeration value="5"/>
+      <enumeration value="6"/>
+      <enumeration value="7"/>
     </restriction>
   </simpleType>
 
@@ -815,7 +829,7 @@
   <!-- Type "vin" -->
   <simpleType name="vin">
     <restriction base="token">
-      <pattern value="[0-9A-Z]{17}" />
+      <pattern value="[0-9A-Z]{17}"/>
     </restriction>
   </simpleType>
 
@@ -825,7 +839,7 @@
   <complexType name="allowanceIdentified">
     <simpleContent>
       <extension base="tns:allowance">
-        <attribute name="id" type="ID" use="required" />
+        <attribute name="id" type="ID" use="required"/>
       </extension>
     </simpleContent>
   </complexType>
@@ -833,34 +847,34 @@
   <!-- Type "bmCheckMsgListIdentified" -->
   <complexType name="bmCheckMsgListIdentified">
     <sequence>
-      <element maxOccurs="9" name="bmCheckMsg" type="nst:string1x70Identified" />
+      <element maxOccurs="9" name="bmCheckMsg" type="nst:string1x70Identified"/>
     </sequence>
-    <attribute name="id" type="ID" use="required" />
+    <attribute name="id" type="ID" use="required"/>
   </complexType>
 
-   <!-- Type "bmMessageList" -->
-   <complexType name="bmMessageList">
-       <sequence>
-           <element maxOccurs="unbounded" name="bmMessage" type="tns:bmMessage" />
-       </sequence>
-   </complexType>
+  <!-- Type "bmMessageList" -->
+  <complexType name="bmMessageList">
+    <sequence>
+      <element maxOccurs="unbounded" name="bmMessage" type="tns:bmMessage"/>
+    </sequence>
+  </complexType>
 
-   <!-- Type "bmMessage" -->
-   <complexType name="bmMessage">
-       <all>
-           <element name="severity" type="nst:severity" />
-           <element name="description" type="nst:string1x200" />
-           <element minOccurs="0" name="oldValue" type="nst:string1x200" />
-           <element minOccurs="0" name="newValue" type="nst:string1x200" />
-           <element minOccurs="0" name="fieldCode" type="nst:string1x70" />
-       </all>
-   </complexType>
+  <!-- Type "bmMessage" -->
+  <complexType name="bmMessage">
+    <all>
+      <element name="severity" type="nst:severity"/>
+      <element name="description" type="nst:string1x200"/>
+      <element minOccurs="0" name="oldValue" type="nst:string1x200"/>
+      <element minOccurs="0" name="newValue" type="nst:string1x200"/>
+      <element minOccurs="0" name="fieldCode" type="nst:string1x70"/>
+    </all>
+  </complexType>
 
   <!-- Type "bonusMalusIdentified" -->
   <complexType name="bonusMalusIdentified">
     <simpleContent>
       <extension base="tns:bonusMalus">
-        <attribute name="id" type="ID" use="required" />
+        <attribute name="id" type="ID" use="required"/>
       </extension>
     </simpleContent>
   </complexType>
@@ -868,12 +882,13 @@
   <!-- Type "calculationRequest" -->
   <complexType name="calculationRequest">
     <sequence>
-      <element maxOccurs="1" ref="nst:header" />
-      <element maxOccurs="1" ref="nst:general" />
-      <element maxOccurs="1" ref="nst:partnerList" />
+      <element maxOccurs="1" ref="nst:header"/>
+      <element maxOccurs="1" ref="nst:general"/>
+      <element maxOccurs="1" ref="nst:partnerList"/>
       <element name="motor" type="tns:motorIdentified">
         <annotation>
-          <documentation>EN: "Vehicle specifications for Calculation-Request." DE: "Fahrzeugangaben fur Berechnungsanfrage." HU: "Jarmu adatok szamitasi kerelmet."</documentation>
+          <documentation>EN: "Vehicle specifications for Calculation-Request." DE: "Fahrzeugangaben
+            fur Berechnungsanfrage." HU: "Jarmu adatok szamitasi kerelmet."</documentation>
         </annotation>
       </element>
     </sequence>
@@ -882,63 +897,64 @@
   <!-- Type "calculationResponse" -->
   <complexType name="calculationResponse">
     <sequence>
-      <element maxOccurs="1" ref="nst:header" />
-      <element maxOccurs="1" ref="nst:general" />
-      <element maxOccurs="1" ref="nst:partnerList" />
+      <element maxOccurs="1" ref="nst:header"/>
+      <element maxOccurs="1" ref="nst:general"/>
+      <element maxOccurs="1" ref="nst:partnerList"/>
       <element minOccurs="0" name="motor" type="tns:motorIdentified">
         <annotation>
-          <documentation>EN: "Vehicle specifications for Calculation-Response." DE: "Fahrzeugangaben fur Berechnungsantwort." HU: "A jarmu muszaki szamitasi valaszt."</documentation>
+          <documentation>EN: "Vehicle specifications for Calculation-Response." DE: "Fahrzeugangaben
+            fur Berechnungsantwort." HU: "A jarmu muszaki szamitasi valaszt."</documentation>
         </annotation>
       </element>
-      <element minOccurs="0" ref="nst:result" />
-      <element minOccurs="0" ref="nst:errorList" />
+      <element minOccurs="0" ref="nst:result"/>
+      <element minOccurs="0" ref="nst:errorList"/>
     </sequence>
   </complexType>
 
-	<complexType name="mtplExtIdentified">
-		<all>
-			<element name="bonusMalusDecl" type="nst:string1x70Identified" />
-			<element name="prevInsCode" type="nst:string1x70Identified" />
-			<element name="prevInsNummer" type="nst:string1x70Identified" />
-			<element name="prevInsBeginDate" type="nst:dateIdentified" />
-			<element name="prevMainAnniversaryHfDate" type="nst:dateIdentified" />
-			<element name="prevInsEndDate" type="nst:dateIdentified" />
-			<element name="prevInsPlateNumber" type="nst:string1x70Identified" />
-			<element name="prevInsTermReason" type="nst:string1x70Identified" />
-			<element name="prevInsBmClass" type="nst:string1x70Identified" />
-			<element name="mabiszFee" type="nst:natural1x11Identified" />
-			<element name="mabiszFeeBrutto" type="nst:natural1x11Identified" />
-			<element name="mabiszFeeStartDate" type="nst:dateIdentified" />
-			<element name="mabiszFeeEndDate" type="nst:dateIdentified" />
-		</all>
-		<attribute name="id" type="ID" use="required" />
-	</complexType>
+  <complexType name="mtplExtIdentified">
+    <all>
+      <element name="bonusMalusDecl" type="nst:string1x70Identified"/>
+      <element name="prevInsCode" type="nst:string1x70Identified"/>
+      <element name="prevInsNummer" type="nst:string1x70Identified"/>
+      <element name="prevInsBeginDate" type="nst:dateIdentified"/>
+      <element name="prevMainAnniversaryHfDate" type="nst:dateIdentified"/>
+      <element name="prevInsEndDate" type="nst:dateIdentified"/>
+      <element name="prevInsPlateNumber" type="nst:string1x70Identified"/>
+      <element name="prevInsTermReason" type="nst:string1x70Identified"/>
+      <element name="prevInsBmClass" type="nst:string1x70Identified"/>
+      <element name="mabiszFee" type="nst:natural1x11Identified"/>
+      <element name="mabiszFeeBrutto" type="nst:natural1x11Identified"/>
+      <element name="mabiszFeeStartDate" type="nst:dateIdentified"/>
+      <element name="mabiszFeeEndDate" type="nst:dateIdentified"/>
+    </all>
+    <attribute name="id" type="ID" use="required"/>
+  </complexType>
 
   <!-- Type "coverageIdentified" -->
   <complexType name="coverageIdentified">
     <all>
-      <element ref="nst:coverageType" />
-      <element ref="tns:deductibleCode" />
-      <element minOccurs="0" ref="tns:allowance" />
-      <element minOccurs="0" ref="tns:bonusMalus" />
+      <element ref="nst:coverageType"/>
+      <element ref="tns:deductibleCode"/>
+      <element minOccurs="0" ref="tns:allowance"/>
+      <element minOccurs="0" ref="tns:bonusMalus"/>
     </all>
-    <attribute name="id" type="ID" use="required" />
+    <attribute name="id" type="ID" use="required"/>
   </complexType>
 
   <!-- Type "coverageListIdentified" -->
   <complexType name="coverageListIdentified">
     <sequence>
-      <element maxOccurs="unbounded" ref="tns:coverage" />
-      <element minOccurs="0" maxOccurs="1" name="mtplExt" type="tns:mtplExtIdentified" />
+      <element maxOccurs="unbounded" ref="tns:coverage"/>
+      <element minOccurs="0" maxOccurs="1" name="mtplExt" type="tns:mtplExtIdentified"/>
     </sequence>
-    <attribute name="id" type="ID" use="required" />
+    <attribute name="id" type="ID" use="required"/>
   </complexType>
 
   <!-- Type "deductibleCodeIdentified" -->
   <complexType name="deductibleCodeIdentified">
     <simpleContent>
       <extension base="tns:deductibleCode">
-        <attribute name="id" type="ID" use="required" />
+        <attribute name="id" type="ID" use="required"/>
       </extension>
     </simpleContent>
   </complexType>
@@ -947,7 +963,7 @@
   <complexType name="detailedModelCodeIdentified">
     <simpleContent>
       <extension base="nst:string1x70">
-        <attribute name="id" type="ID" use="required" />
+        <attribute name="id" type="ID" use="required"/>
       </extension>
     </simpleContent>
   </complexType>
@@ -956,7 +972,7 @@
   <complexType name="engineIdentified">
     <simpleContent>
       <extension base="tns:engine">
-        <attribute name="id" type="ID" use="required" />
+        <attribute name="id" type="ID" use="required"/>
       </extension>
     </simpleContent>
   </complexType>
@@ -965,7 +981,7 @@
   <complexType name="eurotaxIdentified">
     <simpleContent>
       <extension base="tns:eurotax">
-        <attribute name="id" type="ID" use="required" />
+        <attribute name="id" type="ID" use="required"/>
       </extension>
     </simpleContent>
   </complexType>
@@ -974,7 +990,7 @@
   <complexType name="extraEquipmentIdentified">
     <simpleContent>
       <extension base="tns:extraEquipment">
-        <attribute name="id" type="ID" use="required" />
+        <attribute name="id" type="ID" use="required"/>
       </extension>
     </simpleContent>
   </complexType>
@@ -982,16 +998,16 @@
   <!-- Type "extraEquipmentListIdentified" -->
   <complexType name="extraEquipmentListIdentified">
     <sequence>
-      <element maxOccurs="7" ref="tns:extraEquipment" />
+      <element maxOccurs="7" ref="tns:extraEquipment"/>
     </sequence>
-    <attribute name="id" type="ID" use="required" />
+    <attribute name="id" type="ID" use="required"/>
   </complexType>
 
   <!-- Type "financingIdentified" -->
   <complexType name="financingIdentified">
     <simpleContent>
       <extension base="tns:financing">
-        <attribute name="id" type="ID" use="required" />
+        <attribute name="id" type="ID" use="required"/>
       </extension>
     </simpleContent>
   </complexType>
@@ -999,54 +1015,55 @@
   <!-- Type "motorIdentified" -->
   <complexType name="motorIdentified">
     <all>
-      <element minOccurs="0" ref="tns:licenceYear" />
-      <element minOccurs="0" ref="tns:vehicleType" />
-      <element minOccurs="0" ref="tns:vehicleVendor" />
-      <element minOccurs="0" ref="tns:eurotax" />
-      <element minOccurs="0" ref="tns:detailedModelCode" />
-      <element minOccurs="0" ref="tns:engine" />
-      <element minOccurs="0" ref="tns:power" />
-      <element minOccurs="0" ref="tns:cubicCapacity" />
-      <element minOccurs="0" ref="tns:totalWeight" />
-      <element minOccurs="0" ref="tns:payload" />
-      <element minOccurs="0" ref="tns:vehicleUsage" />
-      <element minOccurs="0" ref="nst:zip" />
-      <element minOccurs="0" ref="tns:productionDate" />
-      <element minOccurs="0" ref="tns:driverGroup" />
-      <element minOccurs="0" ref="tns:vehicleValueNew" />
-      <element minOccurs="0" ref="tns:seats" />
-      <element minOccurs="0" ref="tns:registrationNumber" />
-      <element minOccurs="0" ref="tns:dateOfOwnership" />
-      <element minOccurs="0" ref="tns:insuredRegistration" />
-      <element minOccurs="0" ref="tns:vin" />
-      <element minOccurs="0" ref="tns:financing" />
-      <element minOccurs="0" ref="nst:loanCreditor" />
-      <element minOccurs="0" ref="nst:loanNumber" />
-      <element minOccurs="0" ref="nst:loanAmount" />
-      <element minOccurs="0" ref="nst:loanStartDate" />
-      <element minOccurs="0" ref="nst:loanEndDate" />
-      <element minOccurs="0" ref="nst:loanInitialRate" />
-      <element minOccurs="0" type="nst:string1x70Identified" name="bmCheckFlag" />
-      <element minOccurs="0" ref="tns:bmMessageList" />
-      <element minOccurs="0" ref="tns:bmCheckMsgList" />
-      <element minOccurs="0" ref="tns:extraEquipmentList" />
-      <element minOccurs="0" ref="tns:protectionKeysCardsList" />
-      <element minOccurs="0" ref="tns:protectionDeviceList" />
-      <element minOccurs="0" type="nst:string1x70Identified" name="preDamages" />
-      <element minOccurs="0" ref="tns:coverageList" />
+      <element minOccurs="0" ref="tns:licenceYear"/>
+      <element minOccurs="0" ref="tns:vehicleType"/>
+      <element minOccurs="0" ref="tns:vehicleVendor"/>
+      <element minOccurs="0" ref="tns:eurotax"/>
+      <element minOccurs="0" ref="tns:detailedModelCode"/>
+      <element minOccurs="0" ref="tns:engine"/>
+      <element minOccurs="0" ref="tns:power"/>
+      <element minOccurs="0" ref="tns:cubicCapacity"/>
+      <element minOccurs="0" ref="tns:totalWeight"/>
+      <element minOccurs="0" ref="tns:payload"/>
+      <element minOccurs="0" ref="tns:vehicleUsage"/>
+      <element minOccurs="0" ref="nst:zip"/>
+      <element minOccurs="0" ref="tns:productionDate"/>
+      <element minOccurs="0" ref="tns:driverGroup"/>
+      <element minOccurs="0" ref="tns:vehicleValueNew"/>
+      <element minOccurs="0" ref="tns:seats"/>
+      <element minOccurs="0" ref="tns:registrationNumber"/>
+      <element minOccurs="0" ref="tns:dateOfOwnership"/>
+      <element minOccurs="0" ref="tns:insuredRegistration"/>
+      <element minOccurs="0" ref="tns:vin"/>
+      <element minOccurs="0" ref="tns:financing"/>
+      <element minOccurs="0" ref="nst:loanCreditor"/>
+      <element minOccurs="0" ref="nst:loanNumber"/>
+      <element minOccurs="0" ref="nst:loanAmount"/>
+      <element minOccurs="0" ref="nst:loanStartDate"/>
+      <element minOccurs="0" ref="nst:loanEndDate"/>
+      <element minOccurs="0" ref="nst:loanInitialRate"/>
+      <element minOccurs="0" type="nst:string1x70Identified" name="bmCheckFlag"/>
+      <element minOccurs="0" ref="tns:bmMessageList"/>
+      <element minOccurs="0" ref="tns:bmCheckMsgList"/>
+      <element minOccurs="0" ref="tns:extraEquipmentList"/>
+      <element minOccurs="0" ref="tns:protectionKeysCardsList"/>
+      <element minOccurs="0" ref="tns:protectionDeviceList"/>
+      <element minOccurs="0" type="nst:string1x70Identified" name="preDamages"/>
+      <element minOccurs="0" ref="tns:coverageList"/>
     </all>
-    <attribute name="id" type="ID" use="required" />
+    <attribute name="id" type="ID" use="required"/>
   </complexType>
 
   <!-- Type "proposalRequest" -->
   <complexType name="proposalRequest">
     <sequence>
-      <element maxOccurs="1" ref="nst:header" />
-      <element maxOccurs="1" ref="nst:general" />
-      <element maxOccurs="1" ref="nst:partnerList" />
+      <element maxOccurs="1" ref="nst:header"/>
+      <element maxOccurs="1" ref="nst:general"/>
+      <element maxOccurs="1" ref="nst:partnerList"/>
       <element name="motor" type="tns:motorIdentified">
         <annotation>
-          <documentation>EN: "Vehicle specifications for Proposal-Request." DE: "Fahrzeugangaben fur Antragsanfrage." HU: "Jarmu eloirasok alkalmazasi kerelem."</documentation>
+          <documentation>EN: "Vehicle specifications for Proposal-Request." DE: "Fahrzeugangaben fur
+            Antragsanfrage." HU: "Jarmu eloirasok alkalmazasi kerelem."</documentation>
         </annotation>
       </element>
     </sequence>
@@ -1055,16 +1072,18 @@
   <!-- Type "proposalResponse" -->
   <complexType name="proposalResponse">
     <sequence>
-      <element maxOccurs="1" ref="nst:header" />
-      <element maxOccurs="1" ref="nst:general" />
-      <element maxOccurs="1" ref="nst:partnerList" />
+      <element maxOccurs="1" ref="nst:header"/>
+      <element maxOccurs="1" ref="nst:general"/>
+      <element maxOccurs="1" ref="nst:partnerList"/>
       <element minOccurs="0" name="motor" type="tns:motorIdentified">
         <annotation>
-          <documentation>EN: "Vehicle specifications for Proposal-Response." DE: "Fahrzeugangaben fur die Antragsantwort." HU: "A jarmu muszaki alkalmazasara vonatkozo valaszt."</documentation>
+          <documentation>EN: "Vehicle specifications for Proposal-Response." DE: "Fahrzeugangaben
+            fur die Antragsantwort." HU: "A jarmu muszaki alkalmazasara vonatkozo
+            valaszt."</documentation>
         </annotation>
       </element>
-      <element minOccurs="0" ref="nst:result" />
-      <element minOccurs="0" ref="nst:errorList" />
+      <element minOccurs="0" ref="nst:result"/>
+      <element minOccurs="0" ref="nst:errorList"/>
     </sequence>
   </complexType>
 
@@ -1072,7 +1091,7 @@
   <complexType name="protectionDeviceIdentified">
     <simpleContent>
       <extension base="tns:protectionDevice">
-        <attribute name="id" type="ID" use="required" />
+        <attribute name="id" type="ID" use="required"/>
       </extension>
     </simpleContent>
   </complexType>
@@ -1080,24 +1099,24 @@
   <!-- Type "protectionDeviceListIdentified" -->
   <complexType name="protectionDeviceListIdentified">
     <sequence>
-      <element maxOccurs="3" ref="tns:protectionDevice" />
+      <element maxOccurs="3" ref="tns:protectionDevice"/>
     </sequence>
-    <attribute name="id" type="ID" use="required" />
+    <attribute name="id" type="ID" use="required"/>
   </complexType>
 
   <!-- Type "protectionKeysCardsListIdentified" -->
   <complexType name="protectionKeysCardsListIdentified">
     <sequence>
-      <element maxOccurs="14" ref="tns:protectionKeysCards" />
+      <element maxOccurs="14" ref="tns:protectionKeysCards"/>
     </sequence>
-    <attribute name="id" type="ID" use="required" />
+    <attribute name="id" type="ID" use="required"/>
   </complexType>
 
   <!-- Type "registrationNumberIdentified" -->
   <complexType name="registrationNumberIdentified">
     <simpleContent>
       <extension base="tns:registrationNumber">
-        <attribute name="id" type="ID" use="required" />
+        <attribute name="id" type="ID" use="required"/>
       </extension>
     </simpleContent>
   </complexType>
@@ -1106,7 +1125,7 @@
   <complexType name="vehicleTypeIdentified">
     <simpleContent>
       <extension base="tns:vehicleType">
-        <attribute name="id" type="ID" use="required" />
+        <attribute name="id" type="ID" use="required"/>
       </extension>
     </simpleContent>
   </complexType>
@@ -1115,7 +1134,7 @@
   <complexType name="vehicleUsageIdentified">
     <simpleContent>
       <extension base="tns:vehicleUsage">
-        <attribute name="id" type="ID" use="required" />
+        <attribute name="id" type="ID" use="required"/>
       </extension>
     </simpleContent>
   </complexType>
@@ -1124,7 +1143,7 @@
   <complexType name="vehicleVendorIdentified">
     <simpleContent>
       <extension base="tns:vehicleVendor">
-        <attribute name="id" type="ID" use="required" />
+        <attribute name="id" type="ID" use="required"/>
       </extension>
     </simpleContent>
   </complexType>
@@ -1133,7 +1152,7 @@
   <complexType name="vinIdentified">
     <simpleContent>
       <extension base="tns:vin">
-        <attribute name="id" type="ID" use="required" />
+        <attribute name="id" type="ID" use="required"/>
       </extension>
     </simpleContent>
   </complexType>
@@ -1144,14 +1163,16 @@
   <!-- Element "allowance" -->
   <element name="allowance" type="tns:allowanceIdentified">
     <annotation>
-      <documentation>EN: "Code of allowance." DE: "Vermittlerabhaniger Rabatt." HU: "Kedvezmenyek."</documentation>
+      <documentation>EN: "Code of allowance." DE: "Vermittlerabhaniger Rabatt." HU:
+        "Kedvezmenyek."</documentation>
     </annotation>
   </element>
 
   <!-- Element "bonusMalus" -->
   <element name="bonusMalus" type="tns:bonusMalusIdentified">
     <annotation>
-      <documentation>EN: "Claims category." DE: "Schadenfreiheitsklasse." HU: "Kovetelesek kategoriaban."</documentation>
+      <documentation>EN: "Claims category." DE: "Schadenfreiheitsklasse." HU: "Kovetelesek
+        kategoriaban."</documentation>
     </annotation>
   </element>
 
@@ -1162,54 +1183,58 @@
     </annotation>
   </element>
 
-   <!-- Element "bmMessageList" -->
-   <element name="bmMessageList" type="tns:bmMessageList">
-       <annotation>
-           <documentation>EN: "." DE: "." HU: "."</documentation>
-       </annotation>
-   </element>
+  <!-- Element "bmMessageList" -->
+  <element name="bmMessageList" type="tns:bmMessageList">
+    <annotation>
+      <documentation>EN: "." DE: "." HU: "."</documentation>
+    </annotation>
+  </element>
 
   <!-- Element "calculationRequest" -->
   <element name="calculationRequest" type="tns:calculationRequest">
     <annotation>
-      <documentation>EN: "Motor-Calculation-Request." DE: "KFZ-Berechnung-Anfrage." HU: "Autok szamitas kerelmet."</documentation>
+      <documentation>EN: "Motor-Calculation-Request." DE: "KFZ-Berechnung-Anfrage." HU: "Autok
+        szamitas kerelmet."</documentation>
     </annotation>
     <key name="keyCoverageRequest">
-      <selector xpath=".//tns:coverage" />
-      <field xpath="nst:coverageType" />
+      <selector xpath=".//tns:coverage"/>
+      <field xpath="nst:coverageType"/>
     </key>
   </element>
 
   <!-- Element "calculationResponse" -->
   <element name="calculationResponse" type="tns:calculationResponse">
     <annotation>
-      <documentation>EN: "Motor-Calculation-Response." DE: "KFZ-Berechnung-Antwort." HU: "Autok szamitas valasz."</documentation>
+      <documentation>EN: "Motor-Calculation-Response." DE: "KFZ-Berechnung-Antwort." HU: "Autok
+        szamitas valasz."</documentation>
     </annotation>
     <key name="keyCoverageResponse">
-      <selector xpath=".//tns:coverage" />
-      <field xpath="nst:coverageType" />
+      <selector xpath=".//tns:coverage"/>
+      <field xpath="nst:coverageType"/>
     </key>
     <keyref name="keyrefCoverageResponse" refer="tns:keyCoverageResponse">
-      <selector xpath=".//tns:resultCoverage" />
-      <field xpath="nst:coverageType" />
+      <selector xpath=".//tns:resultCoverage"/>
+      <field xpath="nst:coverageType"/>
     </keyref>
     <unique name="uniqueKeyrefCoverageResponse">
-      <selector xpath=".//tns:resultCoverage" />
-      <field xpath="nst:coverageType" />
+      <selector xpath=".//tns:resultCoverage"/>
+      <field xpath="nst:coverageType"/>
     </unique>
   </element>
 
   <!-- Element "coverage" -->
   <element name="coverage" type="tns:coverageIdentified">
     <annotation>
-      <documentation>EN: "Car insurance division." DE: "KFZ-Versicherungssparte." HU: "Gepjarmubiztositas korzet."</documentation>
+      <documentation>EN: "Car insurance division." DE: "KFZ-Versicherungssparte." HU:
+        "Gepjarmubiztositas korzet."</documentation>
     </annotation>
   </element>
 
   <!-- Element "coverageList" -->
   <element name="coverageList" type="tns:coverageListIdentified">
     <annotation>
-      <documentation>EN: "Coverage list." DE: "Liste der Versicherungssparten." HU: "???"</documentation>
+      <documentation>EN: "Coverage list." DE: "Liste der Versicherungssparten." HU:
+        "???"</documentation>
     </annotation>
   </element>
 
@@ -1230,14 +1255,16 @@
   <!-- Element "deductibleCode" -->
   <element name="deductibleCode" type="tns:deductibleCodeIdentified">
     <annotation>
-      <documentation>EN: "Deductible code." DE: "Selbstbehalt Code." HU: "Levonhato-kod."</documentation>
+      <documentation>EN: "Deductible code." DE: "Selbstbehalt Code." HU:
+        "Levonhato-kod."</documentation>
     </annotation>
   </element>
 
   <!-- Element "detailedModelCode" -->
   <element name="detailedModelCode" type="tns:detailedModelCodeIdentified">
     <annotation>
-      <documentation>EN: "Detailed model code." DE: "Detailed model code." HU: "Detailed model code."</documentation>
+      <documentation>EN: "Detailed model code." DE: "Detailed model code." HU: "Detailed model
+        code."</documentation>
     </annotation>
   </element>
 
@@ -1265,14 +1292,16 @@
   <!-- Element "extraEquipment" -->
   <element name="extraEquipment" type="tns:extraEquipmentIdentified">
     <annotation>
-      <documentation>EN: "Extra equipment." DE: "Sonderaustattung." HU: "Opcionalis berendezesek."</documentation>
+      <documentation>EN: "Extra equipment." DE: "Sonderaustattung." HU: "Opcionalis
+        berendezesek."</documentation>
     </annotation>
   </element>
 
   <!-- Element "extraEquipmentList" -->
   <element name="extraEquipmentList" type="tns:extraEquipmentListIdentified">
     <annotation>
-      <documentation>EN: "Extra equipment list." DE: "Sonderausstatung Liste." HU: "Extra felszerelések listája."</documentation>
+      <documentation>EN: "Extra equipment list." DE: "Sonderausstatung Liste." HU: "Extra
+        felszerelések listája."</documentation>
     </annotation>
   </element>
 
@@ -1286,14 +1315,16 @@
   <!-- Element "insuredRegistration" -->
   <element name="insuredRegistration" type="nst:dateIdentified">
     <annotation>
-      <documentation>EN: "Admission date to policyholders." DE: "Zulassungsdatum auf Versicherten." HU: "Felveteli idopontja a kotvenytulajdonosok."</documentation>
+      <documentation>EN: "Admission date to policyholders." DE: "Zulassungsdatum auf Versicherten."
+        HU: "Felveteli idopontja a kotvenytulajdonosok."</documentation>
     </annotation>
   </element>
 
   <!-- Element "licenceYear" -->
   <element name="licenceYear" type="nst:natural4Identified">
     <annotation>
-      <documentation>EN: "Year of license acquisition." DE: "Jahr des Fuhrerscheinerwerbs." HU: "Eve engedely megszerzese."</documentation>
+      <documentation>EN: "Year of license acquisition." DE: "Jahr des Fuhrerscheinerwerbs." HU: "Eve
+        engedely megszerzese."</documentation>
     </annotation>
   </element>
 
@@ -1307,44 +1338,48 @@
   <!-- Element "power" -->
   <element name="power" type="nst:natural1x5Identified">
     <annotation>
-      <documentation>EN: "Engine power in KW." DE: "Motorleistung in KW." HU: "Motorteljesitmeny KW."</documentation>
+      <documentation>EN: "Engine power in KW." DE: "Motorleistung in KW." HU: "Motorteljesitmeny
+        KW."</documentation>
     </annotation>
   </element>
 
   <!-- Element "productionDate" -->
   <element name="productionDate" type="nst:dateIdentified">
     <annotation>
-      <documentation>EN: "Year of vehicle production." DE: "Jahr der Fahrzeugproduktion." HU: "Ev jarmugyartas."</documentation>
+      <documentation>EN: "Year of vehicle production." DE: "Jahr der Fahrzeugproduktion." HU: "Ev
+        jarmugyartas."</documentation>
     </annotation>
   </element>
 
   <!-- Element "proposalRequest" -->
   <element name="proposalRequest" type="tns:proposalRequest">
     <annotation>
-      <documentation>EN: "Motor-Proposal-Request." DE: "KFZ-Antrag-Anfrage." HU: "Autoipari alkalmazasi kerelem."</documentation>
+      <documentation>EN: "Motor-Proposal-Request." DE: "KFZ-Antrag-Anfrage." HU: "Autoipari
+        alkalmazasi kerelem."</documentation>
     </annotation>
     <key name="keyProposalRequestCoverage">
-      <selector xpath=".//tns:coverage" />
-      <field xpath="nst:coverageType" />
+      <selector xpath=".//tns:coverage"/>
+      <field xpath="nst:coverageType"/>
     </key>
   </element>
 
   <!-- Element "proposalResponse" -->
   <element name="proposalResponse" type="tns:proposalResponse">
     <annotation>
-      <documentation>EN: "Motor-Proposal-Response." DE: "KFZ-Antrag-Antwort." HU: "Auto keres valasz."</documentation>
+      <documentation>EN: "Motor-Proposal-Response." DE: "KFZ-Antrag-Antwort." HU: "Auto keres
+        valasz."</documentation>
     </annotation>
     <key name="keyProposalResponseCoverage">
-      <selector xpath=".//tns:coverage" />
-      <field xpath="nst:coverageType" />
+      <selector xpath=".//tns:coverage"/>
+      <field xpath="nst:coverageType"/>
     </key>
     <keyref name="keyrefProposalResponse" refer="tns:keyProposalResponseCoverage">
-      <selector xpath=".//nst:resultCoverage" />
-      <field xpath="nst:coverageType" />
+      <selector xpath=".//nst:resultCoverage"/>
+      <field xpath="nst:coverageType"/>
     </keyref>
     <unique name="uniqueKeyrefProposalResponse">
-      <selector xpath=".//nst:resultCoverage" />
-      <field xpath="nst:coverageType" />
+      <selector xpath=".//nst:resultCoverage"/>
+      <field xpath="nst:coverageType"/>
     </unique>
   </element>
 
@@ -1358,35 +1393,40 @@
   <!-- Element "protectionDeviceList" -->
   <element name="protectionDeviceList" type="tns:protectionDeviceListIdentified">
     <annotation>
-      <documentation>EN: "Protection Device list." DE: "Diebstahlsicherung Liste." HU: "."</documentation>
+      <documentation>EN: "Protection Device list." DE: "Diebstahlsicherung Liste." HU:
+        "."</documentation>
     </annotation>
   </element>
 
   <!-- Element "protectionKeysCards" -->
   <element name="protectionKeysCards" type="nst:string1x10Identified">
     <annotation>
-      <documentation>EN: "Protection Keys Cards." DE: "Sicherungsmechanismen." HU: "."</documentation>
+      <documentation>EN: "Protection Keys Cards." DE: "Sicherungsmechanismen." HU:
+        "."</documentation>
     </annotation>
   </element>
 
   <!-- Element "protectionKeysCardsList" -->
   <element name="protectionKeysCardsList" type="tns:protectionKeysCardsListIdentified">
     <annotation>
-      <documentation>EN: "Protection Keys Cards list." DE: "Sicherungsmechanismen Liste." HU: "."</documentation>
+      <documentation>EN: "Protection Keys Cards list." DE: "Sicherungsmechanismen Liste." HU:
+        "."</documentation>
     </annotation>
   </element>
 
   <!-- Element "registrationNumber" -->
   <element name="registrationNumber" type="tns:registrationNumberIdentified">
     <annotation>
-      <documentation>EN: "Registration number." DE: "Registrationsnummer." HU: "Nyilvantartasi szam."</documentation>
+      <documentation>EN: "Registration number." DE: "Registrationsnummer." HU: "Nyilvantartasi
+        szam."</documentation>
     </annotation>
   </element>
 
   <!-- Element "seats" -->
   <element name="seats" type="nst:natural1x3Identified">
     <annotation>
-      <documentation>EN: "Number of seats." DE: "Anzahl der Sitzplatze." HU: "Ulohelyek szama."</documentation>
+      <documentation>EN: "Number of seats." DE: "Anzahl der Sitzplatze." HU: "Ulohelyek
+        szama."</documentation>
     </annotation>
   </element>
 
@@ -1407,7 +1447,8 @@
   <!-- Element "vehicleUsage" -->
   <element name="vehicleUsage" type="tns:vehicleUsageIdentified">
     <annotation>
-      <documentation>EN: "Vehicle use." DE: "Art der Verwendung." HU: "Hasznalat modja."</documentation>
+      <documentation>EN: "Vehicle use." DE: "Art der Verwendung." HU: "Hasznalat
+        modja."</documentation>
     </annotation>
   </element>
 
@@ -1428,7 +1469,8 @@
   <!-- Element "vin" -->
   <element name="vin" type="tns:vinIdentified">
     <annotation>
-      <documentation>EN: "Vehicle identification number." DE: "Fahrzeugidentifikationsnummer." HU: "A jarmu azonositasi szama."</documentation>
+      <documentation>EN: "Vehicle identification number." DE: "Fahrzeugidentifikationsnummer." HU:
+        "A jarmu azonositasi szama."</documentation>
     </annotation>
   </element>
 

@@ -297,7 +297,7 @@ class WSDLInterpreter
             );
         }
         
-        while (sizeof($sources) > 2)
+        while (sizeof($sources) > 2) //Ez azért kettő, mert a dateIdentified és az elementReference valamiért elszáll.
         {
             $classesLoaded = 0;
             foreach ($sources as $className => $classInfo) {
@@ -306,8 +306,8 @@ class WSDLInterpreter
                 print_r($classInfo["extends"]);
                 print_r("\n");
 
-                if (!$classInfo["extends"] || (isset($this->_classPHPSources[$classInfo["extends"]]))) {
-                    $this->_classPHPSources[$className] = $classInfo["source"];
+                if (!$classInfo["extends"] || (isset($this->_classPHPSources[$classInfo["extends"]]))) {		    
+	            $this->_classPHPSources[$className] = $classInfo["source"]; 		    
                     unset($sources[$className]);
                     $classesLoaded++;
                 }

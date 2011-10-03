@@ -1,7 +1,7 @@
 <?php
 
 define("ns_type", "http://i3s.inverso.de/mkb/sales/tool/model/type");
-define("ns_model", "http://i3s.inverso.de/mkb/sales/tool/model/model");
+define("ns_model_motor", "http://i3s.inverso.de/mkb/sales/tool/model/motor");
 
 if (!class_exists("header")) {
     
