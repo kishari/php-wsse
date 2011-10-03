@@ -44,6 +44,7 @@ try {
         $partner_1->citizenship = 'H';
         $partner_1->phoneMobil = '06201234567';
         $partner_1->zip = '1111';
+        $partner_1->email = '';
 
         $addressList = new Model\Types\addressListIdentified();
         $address = new Model\Types\addressIdentified();
@@ -70,6 +71,7 @@ try {
         $partner_2->citizenship = 'H';
         $partner_2->phoneMobil = '06201232233';
         $partner_2->zip = '2626';
+        $partner_2->email = '';
 
         $addressList_2 = new Model\Types\addressListIdentified();
         $address_2 = new Model\Types\addressIdentified();
@@ -87,9 +89,46 @@ try {
         $partnerList->partners[] = $partner_2;
 
         $homeList = new Model\Home\homeListIdentified();
-        
-        $propRequest = new Model\Home\proposalRequest();
 
+        $home = new Model\Home\homeIdentified();
+
+        $home->productHome = '02';
+        $home->bundleAllowance = 'Y';
+        $home->contractCondition = '5';
+
+        $buildingList = new Model\Home\buildingListIdentified();
+
+        $building = new Model\Home\buildingIdentified();
+        $building->buildingConstruction = '1';
+        $building->buildingSpecification = '1';
+        $building->streetHouse = 'Halász tár 998';
+        $building->zip = '1111';
+        $building->city = 'Budapest';
+        $building->buildingType = 'EFH';
+        $building->buildingOccupied = 'Y';
+        $building->buildingExploitationMethod = '1';
+        $building->buildingUnderConstruction = 'Y';
+        $building->buildingHabitableSurface = '100';
+
+        $buildingList->buildingList[] = $building;
+        $home->buildingList = $buildingList;
+
+        $coverageList = new Model\Home\coverageListIdentified();
+        $coverage = new Model\Home\coverageIdentified();
+
+        //$coverage->capacity = '';
+        $coverage->coverageType = 'WGB';
+        $coverage->insuranceSum = '19500000';
+        //$coverage->occupation = '';
+        //$coverage->performanceLimit = '';
+
+        $coverageList->coverageList[] = $coverage;
+
+        $building->coverageList=$coverageList;
+        
+        $homeList->homeList[] = $home;
+
+        $propRequest = new Model\Home\proposalRequest();
         $propRequest->header=$header;
         $propRequest->general=$general;
         $propRequest->partnerList=$partnerList;

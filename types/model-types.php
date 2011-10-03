@@ -1064,7 +1064,7 @@ class partnerIdentified {
                 $r['postRecipientAddressId'] = new SoapVar($this->postRecipientAddressId, XSD_TOKEN, null, null, null, \ns_type);
 
             if (isset ($this->addressList))
-                $r['addressList'] = $this->addressList->getAsSOAP ();//new SoapVar($this->addressList, SOAP_ENC_OBJECT, null, null, null, \ns_type);
+                $r['addressList'] = $this->addressList->getAsSOAP ();
 
 
             return $r;
