@@ -907,6 +907,88 @@ class partnerIdentified {
 	 * @var addressListIdentified
 	 */
 	public $addressList;
+
+        public function getAsSOAP() {
+            $r = array();
+            
+            if (isset ($this->partnerEntity))
+               $r['partnerEntity'] = new SoapVar($this->partnerEntity, XSD_TOKEN, null, null, null, \ns_type);
+
+            if (isset ($this->partnerLiability))
+               $r['partnerLiability'] = new SoapVar($this->partnerLiability, XSD_TOKEN, null, null, null, \ns_type);
+
+            if (isset ($this->gender))
+               $r['gender'] = new SoapVar($this->gender, XSD_TOKEN, null, null, null, \ns_type);
+
+            if (isset ($this->title))
+               $r['title'] = new SoapVar($this->title, XSD_TOKEN, null, null, null, \ns_type);
+
+            if (isset ($this->firstname))
+                $r['firstname'] = new SoapVar($this->firstname, XSD_NORMALIZEDSTRING, null, null, null, \ns_type);
+
+            if (isset ($this->lastname))
+                $r['lastname'] = new SoapVar($this->lastname, XSD_NORMALIZEDSTRING, null, null, null, \ns_type);
+
+            if (isset ($this->birthname))
+                $r['birthname'] = new SoapVar($this->birthname, XSD_NORMALIZEDSTRING, null, null, null, \ns_type);
+
+            if (isset ($this->mothersname))
+                $r['mothersname'] = new SoapVar($this->mothersname, XSD_NORMALIZEDSTRING, null, null, null, \ns_type);
+
+            if (isset ($this->birthDate))
+                $r['birthDate'] = new SoapVar($this->birthDate, XSD_STRING, null, null, null, \ns_type);
+
+            if (isset ($this->birthplace))
+                $r['birthplace'] = new SoapVar($this->birthplace, XSD_NORMALIZEDSTRING, null, null, null, \ns_type);
+
+            if (isset ($this->zip))
+                $r['zip'] = new SoapVar($this->zip, XSD_TOKEN, null, null, null, \ns_type);
+
+            if (isset ($this->citizenship))
+                $r['citizenship'] = new SoapVar($this->citizenship, XSD_TOKEN, null, null, null, \ns_type);
+
+            if (isset ($this->residency))
+                $r['residency'] = new SoapVar($this->residency, XSD_NORMALIZEDSTRING, null, null, null, \ns_type);
+
+            if (isset ($this->phone))
+                $r['phone'] = new SoapVar($this->phone, XSD_TOKEN, null, null, null, \ns_type);
+
+            if (isset ($this->phoneBusiness))
+                $r['phoneBusiness'] = new SoapVar($this->phoneBusiness, XSD_TOKEN, null, null, null, \ns_type);
+
+            if (isset ($this->phoneMobil))
+                $r['phoneMobil'] = new SoapVar($this->phoneMobil, XSD_TOKEN, null, null, null, \ns_type);
+
+            if (isset ($this->email))
+                $r['email'] = new SoapVar($this->email, XSD_TOKEN, null, null, null, \ns_type);
+
+            if (isset ($this->bankAccount))
+                $r['$bankAccount'] = new SoapVar($this->$bankAccount, XSD_TOKEN, null, null, null, \ns_type);
+
+            if (isset ($this->bankName))
+                $r['bankName'] = new SoapVar($this->bankName, XSD_NORMALIZEDSTRING, null, null, null, \ns_type);
+
+            if (isset ($this->taxNumber))
+                $r['taxNumber'] = new SoapVar($this->taxNumber, XSD_STRING, null, null, null, \ns_type);
+
+            if (isset ($this->profession))
+                $r['profession'] = new SoapVar($this->profession, XSD_NORMALIZEDSTRING, null, null, null, \ns_type);
+
+            if (isset ($this->tradeRegister))
+                $r['tradeRegister'] = new SoapVar($this->tradeRegister, XSD_NORMALIZEDSTRING, null, null, null, \ns_type);
+
+            if (isset ($this->dmDecl))
+                $r['dmDecl'] = new SoapVar($this->dmDecl, XSD_NORMALIZEDSTRING, null, null, null, \ns_type);
+
+            if (isset ($this->postRecipientAddressId))
+                $r['postRecipientAddressId'] = new SoapVar($this->postRecipientAddressId, XSD_TOKEN, null, null, null, \ns_type);
+
+            if (isset ($this->addressList))
+                $r['addressList'] = new SoapVar($this->addressList, SOAP_ENC_OBJECT, null, null, null, \ns_type);
+
+
+            return $r;
+        }
 }}
 
 if (!class_exists("partnerLiabilityIdentified")) {
@@ -923,20 +1005,15 @@ if (!class_exists("partnerListIdentified")) {
 class partnerListIdentified {
 	
         public $partners = array();
-        /**
-	 * @access public
-	 * @var partnerIdentified
-	 */
-	public $partner;
 
         public function getAsSOAP() {
             $r = array();
-
-            foreach($partners as $p) {
-                print_r($p->firstname);
+            foreach($this->partners as $p) {
+                
+                $r[] = new SoapVar($p->getAsSOAP(), SOAP_ENC_OBJECT, null, null, 'partner', \ns_type);
             }
-
-            return $r;
+            
+            return new SoapVar($r, SOAP_ENC_OBJECT, null, null, 'partnerList', \ns_type);
         }
 }}
 

@@ -24,8 +24,14 @@ try {
         $general = new Model\Types\generalIdentified();
 
         $partnerList = new Model\Types\partnerListIdentified();
-        $partnerList->partners['0'] = new Model\Types\partnerIdentified();
-        $partnerList->partners['1'] = new Model\Types\partnerIdentified();
+        $partner_1 = new Model\Types\partnerIdentified();
+        $partner_1->firstname = 'Kovács';
+
+        $partner_2 = new Model\Types\partnerIdentified();
+        $partner_2->firstname = 'Tóth';
+        
+        $partnerList->partners[] = $partner_1;
+        $partnerList->partners[] = $partner_2;
 
         $homeList = new Model\Home\homeListIdentified();
         
