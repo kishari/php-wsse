@@ -5,7 +5,7 @@ function buildData() {
 }
 
 require('WSSoapClient.php');
-require('types/motor.php');
+//require('types/motor.php');
 require('types/home.php');
 
 try {
@@ -15,13 +15,13 @@ try {
             ,'location' => 'https://services.mkbb.hu:8080/SalesML/home'
 	));
         
-        $header = new Model\Types\header();
+        $header = new header();
         $header->version = '1.0';
         $header->language = 'HU';
         $header->agentNumber = '0';
         $header->messageNumber = '0001';
 
-        $general = new Model\Types\generalIdentified();
+        $general = new generalIdentified();
 
         $general->product = 'SACH';
         $general->beginDate = '2011-10-30';
@@ -30,8 +30,8 @@ try {
         $general->changeReason = '01';
         $general->valuta = 'HUF';
 
-        $partnerList = new Model\Types\partnerListIdentified();
-        $partner_1 = new Model\Types\partnerIdentified();
+        $partnerList = new partnerListIdentified();
+        $partner_1 = new partnerIdentified();
         $partner_1->partnerEntity = '61';
         $partner_1->partnerLiability = 'VN';
         $partner_1->firstname = 'Elek';
@@ -46,8 +46,8 @@ try {
         $partner_1->zip = '1111';
         $partner_1->email = '';
 
-        $addressList = new Model\Types\addressListIdentified();
-        $address = new Model\Types\addressIdentified();
+        $addressList = new addressListIdentified();
+        $address = new addressIdentified();
 
         $address->addressType = 'H';
         $address->streetHouse = 'Tár utca 12';
@@ -58,7 +58,7 @@ try {
 
         $partner_1->addressList=$addressList;
 
-        $partner_2 = new Model\Types\partnerIdentified();
+        $partner_2 = new partnerIdentified();
         $partner_2->partnerEntity = '61';
         $partner_2->partnerLiability = 'VP';
         $partner_2->firstname = 'Bálint';
@@ -73,8 +73,8 @@ try {
         $partner_2->zip = '2626';
         $partner_2->email = '';
 
-        $addressList_2 = new Model\Types\addressListIdentified();
-        $address_2 = new Model\Types\addressIdentified();
+        $addressList_2 = new addressListIdentified();
+        $address_2 = new addressIdentified();
 
         $address_2->addressType = 'H';
         $address_2->streetHouse = 'Imre kör 123';
@@ -88,17 +88,17 @@ try {
         $partnerList->partners[] = $partner_1;
         $partnerList->partners[] = $partner_2;
 
-        $homeList = new Model\Home\homeListIdentified();
+        $homeList = new homeListIdentified();
 
-        $home = new Model\Home\homeIdentified();
+        $home = new homeIdentified();
 
         $home->productHome = '02';
         $home->bundleAllowance = 'Y';
         $home->contractCondition = '5';
 
-        $buildingList = new Model\Home\buildingListIdentified();
+        $buildingList = new buildingListIdentified();
 
-        $building = new Model\Home\buildingIdentified();
+        $building = new buildingIdentified();
         $building->buildingConstruction = '1';
         $building->buildingSpecification = '1';
         $building->streetHouse = 'Halász tár 998';
@@ -113,8 +113,8 @@ try {
         $buildingList->buildingList[] = $building;
         $home->buildingList = $buildingList;
 
-        $coverageList = new Model\Home\coverageListIdentified();
-        $coverage = new Model\Home\coverageIdentified();
+        $coverageList = new coverageListIdentified();
+        $coverage = new coverageIdentified();
 
         //$coverage->capacity = '';
         $coverage->coverageType = 'WGB';
@@ -128,7 +128,7 @@ try {
         
         $homeList->homeList[] = $home;
 
-        $propRequest = new Model\Home\proposalRequest();
+        $propRequest = new proposalRequest();
         $propRequest->header=$header;
         $propRequest->general=$general;
         $propRequest->partnerList=$partnerList;

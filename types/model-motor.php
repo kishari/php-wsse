@@ -1,8 +1,5 @@
 <?php
 
-namespace Model\Motor;
-
-use \SoapVar;
 
 require_once ('types/model-types.php');
 
@@ -710,13 +707,11 @@ if (!class_exists("vinIdentified")) {
 class vinIdentified extends vin {
 }}
 
-use Model;
-
 if (!class_exists("detailedModelCodeIdentified")) {
 /**
  * detailedModelCodeIdentified
  */
-class detailedModelCodeIdentified extends Model\Types\string1x70 {
+class detailedModelCodeIdentified extends string1x70 {
 }}
 
 

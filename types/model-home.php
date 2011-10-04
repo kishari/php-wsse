@@ -1,10 +1,6 @@
 <?php
 
-namespace Model\Home;
-
 require_once('types/model-types.php');
-
-use \SoapVar;
 
 if(!defined('ns_model_home')) {
     define("ns_model_home", "http://i3s.inverso.de/mkb/sales/tool/model/home");
@@ -219,49 +215,49 @@ class buildingIdentified {
             $r = array();
 
             if (isset ($this->buildingSpecification))
-               $r['buildingSpecification'] = new SoapVar($this->buildingSpecification, XSD_TOKEN, null, null, null, \ns_model_home);
+               $r['buildingSpecification'] = new SoapVar($this->buildingSpecification, XSD_TOKEN, null, null, null, ns_model_home);
 
             if (isset ($this->streetHouse))
-               $r['streetHouse'] = new SoapVar($this->streetHouse, \XSD_NORMALIZEDSTRING, null, null, null, \ns_type);
+               $r['streetHouse'] = new SoapVar($this->streetHouse, XSD_NORMALIZEDSTRING, null, null, null, ns_type);
 
             if (isset ($this->zip))
-               $r['zip'] = new SoapVar($this->zip, XSD_TOKEN, null, null, null, \ns_type);
+               $r['zip'] = new SoapVar($this->zip, XSD_TOKEN, null, null, null, ns_type);
 
             if (isset ($this->city))
-               $r['city'] = new SoapVar($this->city, XSD_NORMALIZEDSTRING, null, null, null, \ns_type);
+               $r['city'] = new SoapVar($this->city, XSD_NORMALIZEDSTRING, null, null, null, ns_type);
 
             if (isset ($this->buildingType))
-               $r['buildingType'] = new SoapVar($this->buildingType, XSD_TOKEN, null, null, null, \ns_model_home);
+               $r['buildingType'] = new SoapVar($this->buildingType, XSD_TOKEN, null, null, null, ns_model_home);
 
             if (isset ($this->buildingConstruction))
-               $r['buildingConstruction'] = new SoapVar($this->buildingConstruction, XSD_TOKEN, null, null, null, \ns_model_home);
+               $r['buildingConstruction'] = new SoapVar($this->buildingConstruction, XSD_TOKEN, null, null, null, ns_model_home);
 
             if (isset ($this->buildingHabitableSurface))
-               $r['buildingHabitableSurface'] = new SoapVar($this->buildingHabitableSurface, XSD_TOKEN, null, null, null, \ns_model_home);
+               $r['buildingHabitableSurface'] = new SoapVar($this->buildingHabitableSurface, XSD_TOKEN, null, null, null, ns_model_home);
 
             if (isset ($this->buildingOccupied))
-               $r['buildingOccupied'] = new SoapVar($this->buildingOccupied, XSD_TOKEN, null, null, null, \ns_model_home);
+               $r['buildingOccupied'] = new SoapVar($this->buildingOccupied, XSD_TOKEN, null, null, null, ns_model_home);
 
             if (isset ($this->buildingExploitationMethod))
-               $r['buildingExploitationMethod'] = new SoapVar($this->buildingExploitationMethod, XSD_TOKEN, null, null, null, \ns_model_home);
+               $r['buildingExploitationMethod'] = new SoapVar($this->buildingExploitationMethod, XSD_TOKEN, null, null, null, ns_model_home);
 
             if (isset ($this->buildingUnderConstruction))
-               $r['buildingUnderConstruction'] = new SoapVar($this->buildingUnderConstruction, XSD_TOKEN, null, null, null, \ns_model_home);
+               $r['buildingUnderConstruction'] = new SoapVar($this->buildingUnderConstruction, XSD_TOKEN, null, null, null, ns_model_home);
 
             if (isset ($this->loanCreditor))
-               $r['loanCreditor'] = new SoapVar($this->loanCreditor, XSD_TOKEN, null, null, null, \ns_type);
+               $r['loanCreditor'] = new SoapVar($this->loanCreditor, XSD_TOKEN, null, null, null, ns_type);
 
             if (isset ($this->loanNumber))
-               $r['loanNumber'] = new SoapVar($this->loanNumber, XSD_TOKEN, null, null, null, \ns_type);
+               $r['loanNumber'] = new SoapVar($this->loanNumber, XSD_TOKEN, null, null, null, ns_type);
             
             if (isset ($this->loanAmount))
-               $r['loanAmount'] = new SoapVar($this->loanAmount, XSD_TOKEN, null, null, null, \ns_type);
+               $r['loanAmount'] = new SoapVar($this->loanAmount, XSD_TOKEN, null, null, null, ns_type);
 
             if (isset ($this->loanEndDate))
-               $r['loanEndDate'] = new SoapVar($this->loanEndDate, \XSD_STRING, null, null, null, \ns_type);
+               $r['loanEndDate'] = new SoapVar($this->loanEndDate, XSD_STRING, null, null, null, ns_type);
 
             if (isset ($this->clause))
-               $r['clause'] = new SoapVar($this->clause, XSD_TOKEN, null, null, null, \ns_type);
+               $r['clause'] = new SoapVar($this->clause, XSD_TOKEN, null, null, null, ns_type);
 
             if (isset ($this->coverageList))
                 $r['coverageList'] = $this->coverageList->getAsSOAP ();
@@ -285,14 +281,14 @@ class buildingListIdentified {
         public function getAsSOAP() {
             $r = array();
             if (sizeof($this->buildingList) == 0) {
-                $r[] = new SoapVar("", \SOAP_ENC_OBJECT, null, null, 'building', \ns_model_home);
+                $r[] = new SoapVar("", SOAP_ENC_OBJECT, null, null, 'building', ns_model_home);
             }
 
             foreach($this->buildingList as $b) {
-                $r[] = new SoapVar($b->getAsSOAP(), SOAP_ENC_OBJECT, null, null, 'building', \ns_model_home);
+                $r[] = new SoapVar($b->getAsSOAP(), SOAP_ENC_OBJECT, null, null, 'building', ns_model_home);
             }
 
-            return new SoapVar($r, SOAP_ENC_OBJECT, null, null, 'buildingList', \ns_model_home);
+            return new SoapVar($r, SOAP_ENC_OBJECT, null, null, 'buildingList', ns_model_home);
         }
 }}
 
@@ -448,19 +444,19 @@ class coverageIdentified {
              $r = array();
 
             if (isset ($this->coverageType))
-               $r['coverageType'] = new SoapVar($this->coverageType, XSD_TOKEN, null, null, null, \ns_type);
+               $r['coverageType'] = new SoapVar($this->coverageType, XSD_TOKEN, null, null, null, ns_type);
 
             if (isset ($this->performanceLimit))
-               $r['performanceLimit'] = new SoapVar($this->performanceLimit, XSD_TOKEN, null, null, null, \ns_model_home);
+               $r['performanceLimit'] = new SoapVar($this->performanceLimit, XSD_TOKEN, null, null, null, ns_model_home);
 
             if (isset ($this->insuranceSum))
-               $r['insuranceSum'] = new SoapVar($this->insuranceSum, XSD_TOKEN, null, null, null, \ns_model_home);
+               $r['insuranceSum'] = new SoapVar($this->insuranceSum, XSD_TOKEN, null, null, null, ns_model_home);
 
             if (isset ($this->capacity))
-               $r['capacity'] = new SoapVar($this->capacity, XSD_TOKEN, null, null, null, \ns_model_home);
+               $r['capacity'] = new SoapVar($this->capacity, XSD_TOKEN, null, null, null, ns_model_home);
 
             if (isset ($this->occupation))
-                $r['occupation'] = new SoapVar($this->occupation, XSD_TOKEN, null, null, null, \ns_model_home);
+                $r['occupation'] = new SoapVar($this->occupation, XSD_TOKEN, null, null, null, ns_model_home);
 
             return $r;
         }
@@ -480,14 +476,14 @@ class coverageListIdentified {
         public function getAsSOAP() {
             $r = array();
             if (sizeof($this->coverageList) == 0) {
-                $r[] = new SoapVar("", \SOAP_ENC_OBJECT, null, null, 'coverage', \ns_model_home);
+                $r[] = new SoapVar("", SOAP_ENC_OBJECT, null, null, 'coverage', ns_model_home);
             }
 
             foreach($this->coverageList as $c) {
-                $r[] = new SoapVar($c->getAsSOAP(), SOAP_ENC_OBJECT, null, null, 'coverage', \ns_model_home);
+                $r[] = new SoapVar($c->getAsSOAP(), SOAP_ENC_OBJECT, null, null, 'coverage', ns_model_home);
             }
 
-            return new SoapVar($r, SOAP_ENC_OBJECT, null, null, 'coverageList', \ns_model_home);
+            return new SoapVar($r, SOAP_ENC_OBJECT, null, null, 'coverageList', ns_model_home);
         }
 }}
 
@@ -531,16 +527,16 @@ class homeIdentified {
             $r = array();
 
             if (isset ($this->productHome))
-               $r['productHome'] = new SoapVar($this->productHome, XSD_TOKEN, null, null, null, \ns_model_home);
+               $r['productHome'] = new SoapVar($this->productHome, XSD_TOKEN, null, null, null, ns_model_home);
 
             if (isset ($this->contractCondition))
-               $r['contractCondition'] = new SoapVar($this->contractCondition, XSD_TOKEN, null, null, null, \ns_model_home);
+               $r['contractCondition'] = new SoapVar($this->contractCondition, XSD_TOKEN, null, null, null, ns_model_home);
 
             if (isset ($this->bundleAllowance))
-               $r['bundleAllowance'] = new SoapVar($this->bundleAllowance, XSD_TOKEN, null, null, null, \ns_model_home);
+               $r['bundleAllowance'] = new SoapVar($this->bundleAllowance, XSD_TOKEN, null, null, null, ns_model_home);
 
             if (isset ($this->specialAllowance))
-               $r['specialAllowance'] = new SoapVar($this->specialAllowance, XSD_TOKEN, null, null, null, \ns_model_home);
+               $r['specialAllowance'] = new SoapVar($this->specialAllowance, XSD_TOKEN, null, null, null, ns_model_home);
 
             if (isset ($this->buildingList))
                 $r['buildingList'] = $this->buildingList->getAsSOAP();
@@ -567,16 +563,16 @@ class homeListIdentified {
         public function getAsSOAP() {
             $r = array();
 
-            if (\sizeof($this->homeList) == 0) {
-                $r[] = new SoapVar("", SOAP_ENC_OBJECT, null, null, 'home', \ns_model_home);
+            if (sizeof($this->homeList) == 0) {
+                $r[] = new SoapVar("", SOAP_ENC_OBJECT, null, null, 'home', ns_model_home);
             }
 
             foreach($this->homeList as $h) {
 
-                $r[] = new SoapVar($h->getAsSOAP(), SOAP_ENC_OBJECT, null, null, 'home', \ns_model_home);
+                $r[] = new SoapVar($h->getAsSOAP(), SOAP_ENC_OBJECT, null, null, 'home', ns_model_home);
             }
 
-            return new SoapVar($r, SOAP_ENC_OBJECT, null, null, 'homeList', \ns_model_home);
+            return new SoapVar($r, SOAP_ENC_OBJECT, null, null, 'homeList', ns_model_home);
         }
 }}
 

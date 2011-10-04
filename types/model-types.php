@@ -1,9 +1,5 @@
 <?php
 
-namespace Model\Types;
-
-use \SoapVar;
-
 if(!defined('ns_type')) {
     define("ns_type", "http://i3s.inverso.de/mkb/sales/tool/model/type");
 }
@@ -406,19 +402,19 @@ class addressIdentified {
             $r = array();
 
             if (isset ($this->addressType))
-               $r['addressType'] = new SoapVar($this->addressType, XSD_TOKEN, null, null, null, \ns_type);
+               $r['addressType'] = new SoapVar($this->addressType, XSD_TOKEN, null, null, null, ns_type);
 
             if (isset ($this->streetHouse))
-               $r['streetHouse'] = new SoapVar($this->streetHouse, \XSD_NORMALIZEDSTRING, null, null, null, \ns_type);
+               $r['streetHouse'] = new SoapVar($this->streetHouse, XSD_NORMALIZEDSTRING, null, null, null, ns_type);
 
             if (isset ($this->zip))
-               $r['zip'] = new SoapVar($this->zip, XSD_TOKEN, null, null, null, \ns_type);
+               $r['zip'] = new SoapVar($this->zip, XSD_TOKEN, null, null, null, ns_type);
 
             if (isset ($this->city))
-               $r['city'] = new SoapVar($this->city, XSD_NORMALIZEDSTRING, null, null, null, \ns_type);
+               $r['city'] = new SoapVar($this->city, XSD_NORMALIZEDSTRING, null, null, null, ns_type);
 
             if (isset ($this->country))
-               $r['country'] = new SoapVar($this->country, XSD_TOKEN, null, null, null, \ns_type);
+               $r['country'] = new SoapVar($this->country, XSD_TOKEN, null, null, null, ns_type);
 
             return $r;
         }
@@ -438,14 +434,14 @@ class addressListIdentified {
         public function getAsSOAP() {
             $r = array();
             if (sizeof($this->addresses) == 0) {
-                $r[] = new SoapVar("", \SOAP_ENC_OBJECT, null, null, 'address', \ns_type);
+                $r[] = new SoapVar("", SOAP_ENC_OBJECT, null, null, 'address', ns_type);
             }
             
             foreach($this->addresses as $a) {
-                $r[] = new SoapVar($a->getAsSOAP(), SOAP_ENC_OBJECT, null, null, 'address', \ns_type);
+                $r[] = new SoapVar($a->getAsSOAP(), SOAP_ENC_OBJECT, null, null, 'address', ns_type);
             }
 
-            return new SoapVar($r, SOAP_ENC_OBJECT, null, null, 'addressList', \ns_type);
+            return new SoapVar($r, SOAP_ENC_OBJECT, null, null, 'addressList', ns_type);
         }
 }}
 
@@ -659,46 +655,46 @@ class generalIdentified {
             $r = array();
 
             if (isset ($this->product))
-                    $r['product'] = new SoapVar($this->product, \XSD_TOKEN, null, null, null, \ns_type);
+                    $r['product'] = new SoapVar($this->product, XSD_TOKEN, null, null, null, ns_type);
 
             if (isset ($this->beginDate))
-                    $r['beginDate'] = new SoapVar($this->beginDate, \XSD_STRING, null, null, null, \ns_type);
+                    $r['beginDate'] = new SoapVar($this->beginDate, XSD_STRING, null, null, null, ns_type);
 
             if (isset ($this->mainDue))
-                    $r['mainDue'] = new SoapVar($this->mainDue, \XSD_STRING, null, null, null, \ns_type);
+                    $r['mainDue'] = new SoapVar($this->mainDue, XSD_STRING, null, null, null, ns_type);
 
             if (isset ($this->bookingFrequency))
-                    $r['bookingFrequency'] = new SoapVar($this->bookingFrequency, \XSD_TOKEN, null, null, null, \ns_type);
+                    $r['bookingFrequency'] = new SoapVar($this->bookingFrequency, XSD_TOKEN, null, null, null, ns_type);
 
             if (isset ($this->paymentMethod))
-                    $r['paymentMethod'] = new SoapVar($this->paymentMethod, \XSD_TOKEN, null, null, null, \ns_type);
+                    $r['paymentMethod'] = new SoapVar($this->paymentMethod, XSD_TOKEN, null, null, null, ns_type);
 
             if (isset ($this->valuta))
-                    $r['valuta'] = new SoapVar($this->valuta, \XSD_TOKEN, null, null, null, \ns_type);
+                    $r['valuta'] = new SoapVar($this->valuta, XSD_TOKEN, null, null, null, ns_type);
 
             if (isset ($this->changeReason))
-                    $r['changeReason'] = new SoapVar($this->changeReason, \XSD_TOKEN, null, null, null, \ns_type);
+                    $r['changeReason'] = new SoapVar($this->changeReason, XSD_TOKEN, null, null, null, ns_type);
 
             if (isset ($this->proposalNumber))
-                    $r['proposalNumber'] = new SoapVar($this->proposalNumber, \XSD_TOKEN, null, null, null, \ns_type);
+                    $r['proposalNumber'] = new SoapVar($this->proposalNumber, XSD_TOKEN, null, null, null, ns_type);
 
             if (isset ($this->duration))
-                    $r['duration'] = new SoapVar($this->duration, \XSD_STRING, null, null, null, \ns_type);
+                    $r['duration'] = new SoapVar($this->duration, XSD_STRING, null, null, null, ns_type);
 
             if (isset ($this->prepayment))
-                    $r['prepayment'] = new SoapVar($this->prepayment, \XSD_TOKEN, null, null, null, \ns_type);
+                    $r['prepayment'] = new SoapVar($this->prepayment, XSD_TOKEN, null, null, null, ns_type);
 
             if (isset ($this->dataRealityDecl))
-                    $r['dataRealityDecl'] = new SoapVar($this->dataRealityDecl, \XSD_NORMALIZEDSTRING, null, null, null, \ns_type);
+                    $r['dataRealityDecl'] = new SoapVar($this->dataRealityDecl, XSD_NORMALIZEDSTRING, null, null, null, ns_type);
 
             if (isset ($this->conditionAprovalDecl))
-                    $r['conditionAprovalDecl'] = new SoapVar($this->conditionAprovalDecl, \XSD_NORMALIZEDSTRING, null, null, null, \ns_type);
+                    $r['conditionAprovalDecl'] = new SoapVar($this->conditionAprovalDecl, XSD_NORMALIZEDSTRING, null, null, null, ns_type);
 
             if (isset ($this->dataHandlingDecl))
-                    $r['dataHandlingDecl'] = new SoapVar($this->dataHandlingDecl, \XSD_NORMALIZEDSTRING, null, null, null, \ns_type);
+                    $r['dataHandlingDecl'] = new SoapVar($this->dataHandlingDecl, XSD_NORMALIZEDSTRING, null, null, null, ns_type);
 
             if (isset ($this->eMailDecl))
-                    $r['eMailDecl'] = new SoapVar($this->eMailDecl, \XSD_NORMALIZEDSTRING, null, null, null, \ns_type);
+                    $r['eMailDecl'] = new SoapVar($this->eMailDecl, XSD_NORMALIZEDSTRING, null, null, null, ns_type);
 
 
             return $r;
@@ -992,76 +988,76 @@ class partnerIdentified {
             $r = array();
             
             if (isset ($this->partnerEntity))
-               $r['partnerEntity'] = new SoapVar($this->partnerEntity, XSD_TOKEN, null, null, null, \ns_type);
+               $r['partnerEntity'] = new SoapVar($this->partnerEntity, XSD_TOKEN, null, null, null, ns_type);
 
             if (isset ($this->partnerLiability))
-               $r['partnerLiability'] = new SoapVar($this->partnerLiability, XSD_TOKEN, null, null, null, \ns_type);
+               $r['partnerLiability'] = new SoapVar($this->partnerLiability, XSD_TOKEN, null, null, null, ns_type);
 
             if (isset ($this->gender))
-               $r['gender'] = new SoapVar($this->gender, XSD_TOKEN, null, null, null, \ns_type);
+               $r['gender'] = new SoapVar($this->gender, XSD_TOKEN, null, null, null, ns_type);
 
             if (isset ($this->title))
-               $r['title'] = new SoapVar($this->title, XSD_TOKEN, null, null, null, \ns_type);
+               $r['title'] = new SoapVar($this->title, XSD_TOKEN, null, null, null, ns_type);
 
             if (isset ($this->firstname))
-                $r['firstname'] = new SoapVar($this->firstname, XSD_NORMALIZEDSTRING, null, null, null, \ns_type);
+                $r['firstname'] = new SoapVar($this->firstname, XSD_NORMALIZEDSTRING, null, null, null, ns_type);
 
             if (isset ($this->lastname))
-                $r['lastname'] = new SoapVar($this->lastname, XSD_NORMALIZEDSTRING, null, null, null, \ns_type);
+                $r['lastname'] = new SoapVar($this->lastname, XSD_NORMALIZEDSTRING, null, null, null, ns_type);
 
             if (isset ($this->birthname))
-                $r['birthname'] = new SoapVar($this->birthname, XSD_NORMALIZEDSTRING, null, null, null, \ns_type);
+                $r['birthname'] = new SoapVar($this->birthname, XSD_NORMALIZEDSTRING, null, null, null, ns_type);
 
             if (isset ($this->mothersname))
-                $r['mothersname'] = new SoapVar($this->mothersname, XSD_NORMALIZEDSTRING, null, null, null, \ns_type);
+                $r['mothersname'] = new SoapVar($this->mothersname, XSD_NORMALIZEDSTRING, null, null, null, ns_type);
 
             if (isset ($this->birthDate))
-                $r['birthDate'] = new SoapVar($this->birthDate, XSD_STRING, null, null, null, \ns_type);
+                $r['birthDate'] = new SoapVar($this->birthDate, XSD_STRING, null, null, null, ns_type);
 
             if (isset ($this->birthplace))
-                $r['birthplace'] = new SoapVar($this->birthplace, XSD_NORMALIZEDSTRING, null, null, null, \ns_type);
+                $r['birthplace'] = new SoapVar($this->birthplace, XSD_NORMALIZEDSTRING, null, null, null, ns_type);
 
             if (isset ($this->zip))
-                $r['zip'] = new SoapVar($this->zip, XSD_TOKEN, null, null, null, \ns_type);
+                $r['zip'] = new SoapVar($this->zip, XSD_TOKEN, null, null, null, ns_type);
 
             if (isset ($this->citizenship))
-                $r['citizenship'] = new SoapVar($this->citizenship, XSD_TOKEN, null, null, null, \ns_type);
+                $r['citizenship'] = new SoapVar($this->citizenship, XSD_TOKEN, null, null, null, ns_type);
 
             if (isset ($this->residency))
-                $r['residency'] = new SoapVar($this->residency, XSD_NORMALIZEDSTRING, null, null, null, \ns_type);
+                $r['residency'] = new SoapVar($this->residency, XSD_NORMALIZEDSTRING, null, null, null, ns_type);
 
             if (isset ($this->phone))
-                $r['phone'] = new SoapVar($this->phone, XSD_TOKEN, null, null, null, \ns_type);
+                $r['phone'] = new SoapVar($this->phone, XSD_TOKEN, null, null, null, ns_type);
 
             if (isset ($this->phoneBusiness))
-                $r['phoneBusiness'] = new SoapVar($this->phoneBusiness, XSD_TOKEN, null, null, null, \ns_type);
+                $r['phoneBusiness'] = new SoapVar($this->phoneBusiness, XSD_TOKEN, null, null, null, ns_type);
 
             if (isset ($this->phoneMobil))
-                $r['phoneMobil'] = new SoapVar($this->phoneMobil, XSD_TOKEN, null, null, null, \ns_type);
+                $r['phoneMobil'] = new SoapVar($this->phoneMobil, XSD_TOKEN, null, null, null, ns_type);
 
             if (isset ($this->email))
-                $r['email'] = new SoapVar($this->email, XSD_TOKEN, null, null, null, \ns_type);
+                $r['email'] = new SoapVar($this->email, XSD_TOKEN, null, null, null, ns_type);
 
             if (isset ($this->bankAccount))
-                $r['$bankAccount'] = new SoapVar($this->$bankAccount, XSD_TOKEN, null, null, null, \ns_type);
+                $r['$bankAccount'] = new SoapVar($this->$bankAccount, XSD_TOKEN, null, null, null, ns_type);
 
             if (isset ($this->bankName))
-                $r['bankName'] = new SoapVar($this->bankName, XSD_NORMALIZEDSTRING, null, null, null, \ns_type);
+                $r['bankName'] = new SoapVar($this->bankName, XSD_NORMALIZEDSTRING, null, null, null, ns_type);
 
             if (isset ($this->taxNumber))
-                $r['taxNumber'] = new SoapVar($this->taxNumber, XSD_STRING, null, null, null, \ns_type);
+                $r['taxNumber'] = new SoapVar($this->taxNumber, XSD_STRING, null, null, null, ns_type);
 
             if (isset ($this->profession))
-                $r['profession'] = new SoapVar($this->profession, XSD_NORMALIZEDSTRING, null, null, null, \ns_type);
+                $r['profession'] = new SoapVar($this->profession, XSD_NORMALIZEDSTRING, null, null, null, ns_type);
 
             if (isset ($this->tradeRegister))
-                $r['tradeRegister'] = new SoapVar($this->tradeRegister, XSD_NORMALIZEDSTRING, null, null, null, \ns_type);
+                $r['tradeRegister'] = new SoapVar($this->tradeRegister, XSD_NORMALIZEDSTRING, null, null, null, ns_type);
 
             if (isset ($this->dmDecl))
-                $r['dmDecl'] = new SoapVar($this->dmDecl, XSD_NORMALIZEDSTRING, null, null, null, \ns_type);
+                $r['dmDecl'] = new SoapVar($this->dmDecl, XSD_NORMALIZEDSTRING, null, null, null, ns_type);
 
             if (isset ($this->postRecipientAddressId))
-                $r['postRecipientAddressId'] = new SoapVar($this->postRecipientAddressId, XSD_TOKEN, null, null, null, \ns_type);
+                $r['postRecipientAddressId'] = new SoapVar($this->postRecipientAddressId, XSD_TOKEN, null, null, null, ns_type);
 
             if (isset ($this->addressList))
                 $r['addressList'] = $this->addressList->getAsSOAP ();
@@ -1089,16 +1085,16 @@ class partnerListIdentified {
         public function getAsSOAP() {
             $r = array();
 
-            if (\sizeof($this->partners) == 0) {
-                $r[] = new SoapVar("", SOAP_ENC_OBJECT, null, null, 'partner', \ns_type);
+            if (sizeof($this->partners) == 0) {
+                $r[] = new SoapVar("", SOAP_ENC_OBJECT, null, null, 'partner', ns_type);
             }
 
             foreach($this->partners as $p) {
                 
-                $r[] = new SoapVar($p->getAsSOAP(), SOAP_ENC_OBJECT, null, null, 'partner', \ns_type);
+                $r[] = new SoapVar($p->getAsSOAP(), SOAP_ENC_OBJECT, null, null, 'partner', ns_type);
             }
             
-            return new SoapVar($r, SOAP_ENC_OBJECT, null, null, 'partnerList', \ns_type);
+            return new SoapVar($r, SOAP_ENC_OBJECT, null, null, 'partnerList', ns_type);
         }
 }}
 
